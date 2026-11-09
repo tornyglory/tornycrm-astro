@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import FooterCta from "../components/FooterCta.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Page not found — Torny OS" description="The page you're after isn't here. Head back to the home page or jump to pricing." noindex>
+	<Nav variant="on-light" />
+
+	<section class="not-found">
+		<span class="not-found__chip">
+			<span class="not-found__chip-dot" aria-hidden="true"></span>
+			404 · Not found
+		</span>
+		<h1 class="not-found__headline">
+			Couldn't find that one<span class="not-found__headline-dot">.</span>
+		</h1>
+		<p class="not-found__body">
+			The page you're after isn't here — maybe a stale link, maybe we moved it. Head back to the home page or jump to
+			pricing.
+		</p>
+		<div class="not-found__actions">
+			<a href="/" class="btn btn--dark">Back to home</a>
+			<a href="/pricing" class="btn btn--outline-dark">See pricing →</a>
+		</div>
+	</section>
+
+	<FooterCta />
+	<Footer />
+</Layout>
+
+<style>
+	.not-found {
+		min-height: 60vh;
+		padding: 120px 72px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		text-align: center;
+		background: var(--color-background);
+	}
+
+	.not-found__chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		padding: 7px 14px;
+		background: var(--color-surface);
+		border: 1px solid var(--color-hairline);
+		border-radius: var(--radius-pill);
+		color: var(--color-primary);
+		font-family: var(--font-mono);
+		font-size: 11px;
+		font-weight: var(--font-weight-medium);
+		letter-spacing: 0.14em;
+		line-height: 14px;
+		text-transform: uppercase;
+	}
+
+	.not-found__chip-dot {
+		width: 5px;
+		height: 5px;
+		border-radius: var(--radius-pill);
+		background: var(--color-primary);
+		flex-shrink: 0;
+	}
+
+	.not-found__headline {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: 88px;
+		font-weight: var(--font-weight-medium);
+		letter-spacing: -0.035em;
+		line-height: 95%;
+		color: var(--color-ink);
+		max-width: 900px;
+	}
+
+	.not-found__headline-dot {
+		color: var(--color-primary);
+	}
+
+	.not-found__body {
+		max-width: 520px;
+		font-family: var(--font-body);
+		font-size: 17px;
+		line-height: 150%;
+		color: var(--color-ink);
+	}
+
+	.not-found__actions {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		padding-top: 8px;
+	}
+
+	@media (max-width: 768px) {
+		.not-found {
+			padding: 80px 20px;
+		}
+		.not-found__headline {
+			font-size: 44px;
+		}
+		.not-found__actions {
+			flex-direction: column;
+			align-items: stretch;
+			width: 100%;
+			gap: 10px;
+		}
+		.not-found__actions .btn {
+			width: 100%;
+		}
+	}
+</style>
