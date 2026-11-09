@@ -1,0 +1,64 @@
+---
+const columns = [
+	{
+		head: "Platform",
+		links: ["Membership", "Venue hire", "Catering", "Table bookings", "Communications", "Payments"],
+	},
+	{
+		head: "For clubs",
+		links: ["Cossie clubs", "RSAs", "Workingmen's clubs", "Surf & boat clubs", "Federations", "Customer stories"],
+	},
+	{
+		head: "Company",
+		links: ["About", "Pricing", "Changelog", "Status", "Contact", "Careers"],
+	},
+	{
+		head: "Resources",
+		links: ["Help centre", "Setup checklist", "Treasurer's guide", "Templates", "Developers", "Security"],
+	},
+];
+---
+
+<footer class="footer">
+	<div class="footer__grid">
+		<div class="footer__brand">
+			<a href="/" class="footer__brand-mark" aria-label="Torny OS">
+				<span class="footer__brand-dot" aria-hidden="true"></span>
+				<span class="footer__brand-name">Torny</span>
+				<span class="footer__brand-tag">OS</span>
+			</a>
+			<p class="footer__blurb">The operating system for clubs. Made in Wellington, Aotearoa New Zealand.</p>
+			<span class="footer__status">
+				<span class="footer__status-dot" aria-hidden="true"></span>
+				All systems normal
+			</span>
+		</div>
+
+		{
+			columns.map((col) => (
+				<div class="footer__col">
+					<div class="footer__col-head">{col.head}</div>
+					<ul class="footer__links">
+						{col.links.map((l) => (
+							<li>
+								<a href="#" class="footer__link">
+									{l}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))
+		}
+	</div>
+
+	<div class="footer__legal">
+		<div class="footer__copy">© 2026 Torny Limited · Wellington</div>
+		<div class="footer__legal-links">
+			<a href="#" class="footer__legal-link">Privacy</a>
+			<a href="#" class="footer__legal-link">Terms</a>
+			<a href="#" class="footer__legal-link">Security</a>
+			<a href="#" class="footer__legal-link">Trust centre</a>
+		</div>
+	</div>
+</footer>

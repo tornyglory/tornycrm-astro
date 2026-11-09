@@ -1,0 +1,78 @@
+---
+const steps = [
+	{
+		n: "01",
+		time: "0:00",
+		dur: "5 min",
+		title: "The quick tour, not the showreel",
+		copy: "A one-minute lap of the whole platform so you know the shape. We skip the stuff you don't care about. No slides.",
+		tag: "Overview",
+		tagVariant: "primary",
+	},
+	{
+		n: "02",
+		time: "0:05",
+		dur: "10 min",
+		title: "Walk the venue hire wizard with your prices",
+		copy: "You tell us your ballroom packages, we drop them in. Three minutes later you've got a public booking page running on your numbers.",
+		tag: "Venue hire",
+		tagVariant: "ochre",
+	},
+	{
+		n: "03",
+		time: "0:15",
+		dur: "10 min",
+		title: "Import your members (really — live)",
+		copy: "Export whatever list you've got — CSV, spreadsheet, hand-written. We'll run the importer on screen and show you the result.",
+		tag: "Membership",
+		tagVariant: "mint",
+	},
+	{
+		n: "04",
+		time: "0:25",
+		dur: "5 min",
+		title: "Treasurer time — Xero, GST, grants",
+		copy: "Bring your treasurer. We'll show the nightly Xero bundle, the GST-on-bar-tabs setting, and the grant tracking your auditor will like.",
+		tag: "Treasurer",
+		tagVariant: "violet",
+	},
+];
+---
+
+<section class="demo-agenda">
+	<header class="demo-agenda__head">
+		<div class="demo-agenda__lead">
+			<span class="section-header__eyebrow">
+				<span class="section-header__eyebrow-dot" aria-hidden="true"></span>
+				The 30 minutes
+			</span>
+			<h2 class="demo-agenda__title">
+				What we'll cover —<br />
+				<span class="demo-agenda__title-soft">no slides, promise.</span>
+			</h2>
+		</div>
+		<p class="demo-agenda__sub">
+			A real screen-share, on your real numbers. If a section bores you, we skip it. If a section raises a question, we
+			stay there.
+		</p>
+	</header>
+
+	<div class="demo-agenda__list">
+		{
+			steps.map((s) => (
+				<article class="demo-agenda__step">
+					<div class="demo-agenda__step-meta">
+						<span class="demo-agenda__step-num">Step {s.n}</span>
+						<span class="demo-agenda__step-time">{s.time}</span>
+						<span class="demo-agenda__step-dur">{s.dur} on screen</span>
+					</div>
+					<div class="demo-agenda__step-body">
+						<h3 class="demo-agenda__step-title">{s.title}</h3>
+						<p class="demo-agenda__step-copy">{s.copy}</p>
+					</div>
+					<span class={`demo-agenda__step-tag demo-agenda__step-tag--${s.tagVariant}`}>{s.tag}</span>
+				</article>
+			))
+		}
+	</div>
+</section>

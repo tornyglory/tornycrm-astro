@@ -1,0 +1,97 @@
+.demo-alt {
+	padding: 80px 72px 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-10);
+	background: var(--color-surface);
+}
+
+.demo-alt__title {
+	max-width: 1296px;
+	width: 100%;
+	font-family: var(--font-display);
+	font-size: 36px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: -0.025em;
+	line-height: 100%;
+	color: var(--color-ink);
+	margin: 0;
+}
+
+.demo-alt__title-soft {
+	color: var(--color-ink-subtle);
+	font-weight: var(--font-weight-regular);
+}
+
+.demo-alt__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--spacing-6);
+	max-width: 1296px;
+	width: 100%;
+}
+
+.demo-alt-card {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 32px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-hairline);
+	border-radius: 20px;
+	transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.demo-alt-card:hover {
+	border-color: var(--color-ink);
+	transform: translateY(-2px);
+}
+
+.demo-alt-card__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 12px;
+	background: var(--color-background);
+	border: 1px solid var(--color-hairline);
+	color: var(--color-ink);
+	flex-shrink: 0;
+}
+
+.demo-alt-card__title {
+	font-family: var(--font-display);
+	font-size: 22px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: -0.015em;
+	line-height: 110%;
+	color: var(--color-ink);
+	margin: 0;
+}
+
+.demo-alt-card__body {
+	font-family: var(--font-body);
+	font-size: 14px;
+	line-height: 160%;
+	color: var(--color-ink-muted);
+}
+
+.demo-alt-card__cta {
+	margin-top: auto;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.12em;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: var(--color-primary);
+	transition: color 160ms ease;
+}
+
+.demo-alt-card:hover .demo-alt-card__cta {
+	color: var(--color-primary-strong);
+}

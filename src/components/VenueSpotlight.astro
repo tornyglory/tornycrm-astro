@@ -1,0 +1,75 @@
+---
+import WizardCard from "./WizardCard.astro";
+---
+
+<section class="split-spot split-spot--dark split-spot--reverse">
+	<div class="split-spot__lead">
+		<span class="split-spot__eyebrow split-spot__eyebrow--sky">
+			<span class="split-spot__eyebrow-dot split-spot__eyebrow-dot--sky" aria-hidden="true"></span>
+			Venue hire &amp; events
+		</span>
+		<h2 class="split-spot__title">
+			A booking wizard your<br />
+			treasurer will <span class="split-spot__title-accent split-spot__title-accent--sky">thank you for.</span>
+		</h2>
+		<p class="split-spot__body">
+			Guests pick a date, add a catering package, pay the deposit — all in under 3 minutes. You get the brief in your
+			inbox, with the calendar already blocked.
+		</p>
+		<ul class="split-spot__checks">
+			<li class="split-spot__check">
+				<span class="split-spot__check-tick split-spot__check-tick--primary" aria-hidden="true">
+					<svg width="11" height="11" viewBox="0 0 11 11">
+						<path
+							d="M2 5.5l2.5 2.5L9 2.5"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+				</span>
+				<span class="split-spot__check-text">
+					<b>Three-step wizard</b> — space, package, details. Hosted on your public site.
+				</span>
+			</li>
+			<li class="split-spot__check">
+				<span class="split-spot__check-tick split-spot__check-tick--primary" aria-hidden="true">
+					<svg width="11" height="11" viewBox="0 0 11 11">
+						<path
+							d="M2 5.5l2.5 2.5L9 2.5"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+				</span>
+				<span class="split-spot__check-text">
+					<b>Deposits held</b> through Stripe. Contract PDF signed before confirmation.
+				</span>
+			</li>
+			<li class="split-spot__check">
+				<span class="split-spot__check-tick split-spot__check-tick--primary" aria-hidden="true">
+					<svg width="11" height="11" viewBox="0 0 11 11">
+						<path
+							d="M2 5.5l2.5 2.5L9 2.5"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+				</span>
+				<span class="split-spot__check-text">
+					<b>Brief auto-landed</b> on your bookings board — no re-keying into a spreadsheet.
+				</span>
+			</li>
+		</ul>
+		<div class="split-spot__cta">
+			<a href="/platform/venue-hire" class="btn btn--primary">See the venue flow →</a>
+		</div>
+	</div>
+
+	<WizardCard />
+</section>

@@ -1,0 +1,92 @@
+---
+const roles = [
+	{
+		initials: "TR",
+		variant: "mint",
+		title: "Treasurer",
+		count: "32 guides",
+		links: [
+			"Reconciling Stripe to Xero",
+			"GST on bistro covers",
+			"Grant acquittals that pass audit",
+		],
+	},
+	{
+		initials: "SC",
+		variant: "ochre",
+		title: "Secretary",
+		count: "28 guides",
+		links: [
+			"AGM paperwork that doesn't bore anyone",
+			"Member join → committee queue",
+			"Minuting without a shorthand",
+		],
+	},
+	{
+		initials: "PR",
+		variant: "violet",
+		title: "President",
+		count: "19 guides",
+		links: [
+			"New committee's first 100 days",
+			"Growing membership past the plateau",
+			"What to say at prize-giving",
+		],
+	},
+	{
+		initials: "MK",
+		variant: "primary",
+		title: "Marketing",
+		count: "24 guides",
+		links: [
+			"Writing a venue hire listing that converts",
+			"Member comms calendar · 12 months",
+			"Instagram for clubs (yes, really)",
+		],
+	},
+];
+---
+
+<section class="res-roles">
+	<header class="res-roles__head">
+		<h2 class="res-roles__title">
+			Browse by <span class="res-roles__title-soft">role.</span>
+		</h2>
+		<p class="res-roles__sub">Not every guide is for everyone. Jump straight to the stack your committee hat needs.</p>
+	</header>
+
+	<div class="res-roles__grid">
+		{
+			roles.map((r) => (
+				<article class="res-role-card">
+					<div class="res-role-card__head">
+						<span class={`res-role-card__badge res-role-card__badge--${r.variant}`} aria-hidden="true">
+							{r.initials}
+						</span>
+						<div>
+							<h3 class="res-role-card__title">{r.title}</h3>
+							<div class="res-role-card__count">{r.count}</div>
+						</div>
+					</div>
+
+					<ul class="res-role-card__links">
+						{r.links.map((l) => (
+							<li>
+								<a href="#" class="res-role-card__link">
+									{l}
+									<span class="res-role-card__link-arrow" aria-hidden="true">
+										→
+									</span>
+								</a>
+							</li>
+						))}
+					</ul>
+
+					<a href="#" class="res-role-card__cta">
+						See all {r.title.toLowerCase()} guides →
+					</a>
+				</article>
+			))
+		}
+	</div>
+</section>

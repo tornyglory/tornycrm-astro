@@ -1,0 +1,85 @@
+---
+const cards = [
+	{
+		n: "01",
+		title: "Live availability",
+		body: "Public calendar knows every tournament, league night and private booking. No double-ups.",
+		icon: "calendar",
+	},
+	{
+		n: "02",
+		title: "Package pricing engine",
+		body: "Canapé, buffet, plated, BYO. Add-ons for AV, bar hosts, extra staff — priced per head, auto-totalled.",
+		icon: "price",
+	},
+	{
+		n: "03",
+		title: "Stripe deposit held",
+		body: "20% deposit (set it to whatever you want) captured on confirmation. Automatically settles after the event.",
+		icon: "card",
+	},
+	{
+		n: "04",
+		title: "Contract & invoice PDF",
+		body: "Signed digitally, filed on the booking, auto-emailed with the confirmation. Chef's prep sheet goes to the kitchen.",
+		icon: "doc",
+	},
+];
+---
+
+<section class="vh-features">
+	<header class="section-header">
+		<div class="section-header__lead">
+			<span class="section-header__eyebrow">
+				<span class="section-header__eyebrow-dot" aria-hidden="true"></span>
+				Four things the wizard handles while you sleep
+			</span>
+			<h2 class="section-header__title">
+				The whole lease,<br />
+				<span class="section-header__title-soft">done in three minutes.</span>
+			</h2>
+		</div>
+		<p class="section-header__body">
+			The booking is paid, the contract is signed, the kitchen knows numbers, your calendar is blocked — before the
+			enquiry would normally have hit your inbox.
+		</p>
+	</header>
+
+	<div class="vh-features__grid">
+		{
+			cards.map((c) => (
+				<article class="vh-feat-card">
+					<span class="vh-feat-card__icon" aria-hidden="true">
+						{c.icon === "calendar" && (
+							<svg width="20" height="20" viewBox="0 0 20 20">
+								<rect x="3" y="5" width="14" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6" />
+								<path d="M6 3v4M14 3v4M3 10h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+							</svg>
+						)}
+						{c.icon === "price" && (
+							<svg width="20" height="20" viewBox="0 0 20 20">
+								<path d="M4 10h12M10 4v12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+								<circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.6" />
+							</svg>
+						)}
+						{c.icon === "card" && (
+							<svg width="20" height="20" viewBox="0 0 20 20">
+								<rect x="2.5" y="5" width="15" height="10" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6" />
+								<path d="M2.5 9h15" fill="none" stroke="currentColor" stroke-width="1.6" />
+							</svg>
+						)}
+						{c.icon === "doc" && (
+							<svg width="20" height="20" viewBox="0 0 20 20">
+								<path d="M5 2h7l4 4v12H5V2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" />
+								<path d="M12 2v4h4M7 9h6M7 12h6M7 15h4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+							</svg>
+						)}
+					</span>
+					<span class="vh-feat-card__number">{c.n}</span>
+					<h3 class="vh-feat-card__title">{c.title}</h3>
+					<p class="vh-feat-card__body">{c.body}</p>
+				</article>
+			))
+		}
+	</div>
+</section>

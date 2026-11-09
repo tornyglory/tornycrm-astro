@@ -1,0 +1,62 @@
+---
+const items = [
+	{
+		q: "Can we keep our existing member list?",
+		a: "Yes — we migrate from CSV, old membership platforms, Excel, or a hand-written book. We'll de-dupe, flag the quiet ones, and import financial status so your committee doesn't have to.",
+		open: false,
+	},
+	{
+		q: "What does onboarding actually look like?",
+		a: "A 30-minute kickoff with your committee, a shared Google Sheet for your member list and venue packages, and a 10-day setup window. We migrate everything so you're not re-typing a thing. By the end of the second week your public site is live and the first bookings are in.",
+		open: true,
+	},
+	{
+		q: "Does it work for cossie clubs, RSAs, workingmen's clubs?",
+		a: "Yes — Torny OS runs across cosmopolitan clubs, RSAs, workingmen's clubs, memorial halls, surf, boat, croquet, golf and rugby clubs. The modules flex to how your club actually operates.",
+		open: false,
+	},
+	{
+		q: "What happens to our existing website?",
+		a: "Point your domain at Torny when the new site is ready. We'll preserve SEO redirects and import the content you want to keep. Old site can stay up during the switchover.",
+		open: false,
+	},
+	{
+		q: "How does payments & Xero reconciliation work?",
+		a: "Stripe handles every transaction — bookings, subs, bar tabs. Every night Torny pushes a reconciled bundle into Xero: one line per settlement, with the detail attached so your treasurer can see what each dollar paid for.",
+		open: false,
+	},
+	{
+		q: "Is my data hosted in New Zealand?",
+		a: "Yes — all customer data lives in AWS Sydney with a daily snapshot held in Auckland. We're GDPR-aligned and NZ Privacy Act compliant.",
+		open: false,
+	},
+];
+---
+
+<section class="faq">
+	<div class="faq__lead">
+		<span class="faq__eyebrow">
+			<span class="faq__eyebrow-dot" aria-hidden="true"></span>
+			FAQ
+		</span>
+		<h2 class="faq__title">
+			Common<br />
+			questions.
+		</h2>
+		<p class="faq__hint">Still thinking? Drop us a line at hello@torny.co and we'll jump on a call.</p>
+	</div>
+
+	<div class="faq__list">
+		{
+			items.map((item) => (
+				<details class="faq__item" open={item.open}>
+					<summary class="faq__q">
+						<span class="faq__q-text">{item.q}</span>
+						<span class="faq__plus" aria-hidden="true" />
+					</summary>
+					<div class="faq__a">{item.a}</div>
+				</details>
+			))
+		}
+	</div>
+</section>

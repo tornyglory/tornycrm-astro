@@ -1,0 +1,151 @@
+---
+import Nav from "./Nav.astro";
+
+const days = [
+	{ dow: "Mon", num: "03", state: "full" },
+	{ dow: "Tue", num: "04", state: "" },
+	{ dow: "Wed", num: "05", state: "selected" },
+	{ dow: "Thu", num: "06", state: "" },
+	{ dow: "Fri", num: "07", state: "" },
+	{ dow: "Sat", num: "08", state: "full" },
+	{ dow: "Sun", num: "09", state: "full" },
+];
+
+const slots = [
+	{ time: "9:00 am", span: "9:00–9:30", state: "" },
+	{ time: "10:00 am", span: "10:00–10:30", state: "selected" },
+	{ time: "11:30 am", span: "11:30–12:00", state: "" },
+	{ time: "1:00 pm", span: "1:00–1:30", state: "" },
+	{ time: "2:30 pm", span: "2:30–3:00", state: "" },
+	{ time: "4:00 pm", span: "4:00–4:30", state: "" },
+];
+---
+
+<Nav variant="on-light" />
+
+<section class="demo-hero">
+	<div class="demo-hero__lead">
+		<span class="demo-hero__chip">
+			<span class="demo-hero__chip-dot" aria-hidden="true"></span>
+			Book a demo
+		</span>
+		<h1 class="demo-hero__headline">
+			Half an hour,<br />
+			<span class="demo-hero__headline-soft">one proper look.</span>
+		</h1>
+		<p class="demo-hero__body">
+			Grab a time, grab your treasurer, and we'll walk your club through Torny on screen — using your actual venue
+			packages, your actual member list. No slides, no sales script, no pressure.
+		</p>
+
+		<div class="demo-hero__trust">
+			<div class="demo-hero__trust-row">
+				<span class="demo-hero__trust-tick" aria-hidden="true">
+					<svg width="11" height="11" viewBox="0 0 11 11">
+						<path
+							d="M2 5.5l2.5 2.5L9 2.5"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+				</span>
+				<span class="demo-hero__trust-text">
+					<b>30 minutes</b> on screen-share — bring whoever's in the committee
+				</span>
+			</div>
+			<div class="demo-hero__trust-row">
+				<span class="demo-hero__trust-tick" aria-hidden="true">
+					<svg width="11" height="11" viewBox="0 0 11 11">
+						<path
+							d="M2 5.5l2.5 2.5L9 2.5"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+					</svg>
+				</span>
+				<span class="demo-hero__trust-text">
+					<b>No credit card</b>, no sales follow-up loop, no "schedule a second call"
+				</span>
+			</div>
+			<div class="demo-hero__trust-row">
+				<span class="demo-hero__trust-tick" aria-hidden="true">
+					<svg width="11" height="11" viewBox="0 0 11 11">
+						<path
+							d="M2 5.5l2.5 2.5L9 2.5"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="1.8"
+							stroke-linecap="round"
+							stroke-linejoin="round"></path>
+				</svg>
+				</span>
+				<span class="demo-hero__trust-text">
+					We'll <b>mock up your public site</b> live if you'd like one to look at
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<aside class="demo-hero__scheduler" aria-label="Pick a time for your demo">
+		<div class="demo-hero__sched-head">
+			<div class="demo-hero__sched-brand">
+				<span class="demo-hero__sched-brand-mark" aria-hidden="true">T</span>
+				<div class="demo-hero__sched-brand-text">
+					<div class="demo-hero__sched-title">Pick a time this week</div>
+					<div class="demo-hero__sched-meta">Nov · 30 min · screen-share</div>
+				</div>
+			</div>
+			<span class="demo-hero__sched-tz">
+				<span class="demo-hero__sched-tz-dot" aria-hidden="true"></span>
+				Pacific/Auckland
+			</span>
+		</div>
+
+		<div>
+			<div class="demo-hero__sched-days-label">Day</div>
+			<div class="demo-hero__sched-days">
+				{
+					days.map((d) => (
+						<button
+							type="button"
+							class={`demo-hero__sched-day ${d.state ? `demo-hero__sched-day--${d.state}` : ""}`}
+							disabled={d.state === "full"}
+						>
+							<span class="demo-hero__sched-day-dow">{d.dow}</span>
+							<span class="demo-hero__sched-day-num">{d.num}</span>
+						</button>
+					))
+				}
+			</div>
+		</div>
+
+		<div>
+			<div class="demo-hero__sched-days-label" style="margin-bottom: 10px;">Time · Wed 5 Nov</div>
+			<div class="demo-hero__sched-slots">
+				{
+					slots.map((s) => (
+						<button
+							type="button"
+							class={`demo-hero__sched-slot ${s.state ? `demo-hero__sched-slot--${s.state}` : ""}`}
+						>
+							<span class="demo-hero__sched-slot-time">{s.time}</span>
+							<span class="demo-hero__sched-slot-span">{s.span}</span>
+						</button>
+					))
+				}
+			</div>
+		</div>
+
+		<div class="demo-hero__sched-cta">
+			<div class="demo-hero__sched-confirmation">
+				<span class="demo-hero__sched-confirmation-label">Selected</span>
+				<span class="demo-hero__sched-confirmation-value">Wed 5 Nov · 10:00 am</span>
+			</div>
+			<a href="#confirm" class="btn btn--dark">Confirm &amp; next →</a>
+		</div>
+	</aside>
+</section>

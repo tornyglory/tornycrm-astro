@@ -1,0 +1,100 @@
+.capabilities {
+	width: 100%;
+	padding: 120px 72px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-16);
+	background: var(--color-surface);
+}
+
+.capabilities__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--spacing-6);
+	max-width: 1296px;
+	width: 100%;
+}
+
+.cap-card {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-5);
+	min-height: 340px;
+	padding: 36px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-hairline);
+	border-radius: var(--radius-lg);
+	transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.cap-card:hover {
+	border-color: var(--color-ink);
+	transform: translateY(-2px);
+	box-shadow: 0 12px 40px -16px rgb(10 10 11 / 12%);
+}
+
+.cap-card__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.cap-card__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: var(--color-ink);
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.cap-card__tag {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.14em;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: var(--color-mute);
+}
+
+.cap-card__title {
+	font-family: var(--font-display);
+	font-size: 30px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: -0.02em;
+	line-height: 105%;
+	color: var(--color-ink);
+	margin: 0;
+}
+
+.cap-card__body {
+	font-family: var(--font-body);
+	font-size: 15px;
+	line-height: 160%;
+	color: var(--color-ink);
+}
+
+.cap-card__pills {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: auto;
+}
+
+.cap-card__pill {
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: var(--radius-pill);
+	background: var(--color-accent-soft);
+	color: var(--color-primary-strong);
+	font-family: var(--font-mono);
+	font-size: 10px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: 0.1em;
+	line-height: 12px;
+	text-transform: uppercase;
+}

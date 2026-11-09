@@ -1,0 +1,27 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-selector-bem-pattern"],
+  "overrides": [
+    {
+      "files": ["**/*.astro"],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "no-descending-specificity": null,
+    "selector-class-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?(?:--[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?$",
+      {
+        "message": "Expected class to follow BEM: block, block__element, block--modifier, block__element--modifier"
+      }
+    ],
+    "plugin/selector-bem-pattern": {
+      "preset": "bem",
+      "componentName": "[a-z]+(?:-[a-z]+)*",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:__[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?(?:--[a-z][a-z0-9]*(?:-[a-z0-9]+)*)?$"
+      },
+      "ignoreSelectors": [":root", "html", "body", "::\\w+"]
+    }
+  }
+}

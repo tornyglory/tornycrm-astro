@@ -1,0 +1,136 @@
+---
+const cards = [
+	{
+		number: "01 · Core",
+		title: "Membership management",
+		body: "Join forms, renewals, direct-debit subs, tiered pricing, concessions, families — all with one source of truth your committee can trust.",
+		pills: ["Online join", "Auto renewals", "Tiers"],
+		icon: "member",
+	},
+	{
+		number: "02 · Revenue",
+		title: "Venue hire & events",
+		body: "A guided booking wizard visitors complete in under 3 minutes. Add-ons, packages, deposits, contract PDFs — straight to your inbox and calendar.",
+		pills: ["3-step wizard", "Packages", "Deposits"],
+		icon: "calendar",
+	},
+	{
+		number: "03 · Revenue",
+		title: "Catering packages",
+		body: "Build canapé, buffet, plated and BYO packages once. Attach them to any booking so guests choose, pay and lock numbers without a phone call.",
+		pills: ["Per-head", "Dietary", "Kitchen print"],
+		icon: "dish",
+	},
+	{
+		number: "04 · Reach",
+		title: "Member communications",
+		body: "Beautiful club newsletters, SMS reminders, draw-day notifications and committee broadcasts — segmented by section, team, or membership tier.",
+		pills: ["Email", "SMS", "Segments"],
+		icon: "send",
+	},
+	{
+		number: "05 · Daily",
+		title: "Table bookings",
+		body: "Members book a table for Friday dinner from their phone. Floor plans, pax limits, two-sitting turnover and automated reminder texts — no missed covers.",
+		pills: ["Floor plan", "Sittings", "SMS reminders"],
+		icon: "target",
+	},
+	{
+		number: "06 · Money",
+		title: "Payments & ledger",
+		body: "Member subs, booking deposits, event entries, bar tabs. One payment stack, one reconciled ledger, straight into Xero every night.",
+		pills: ["Direct debit", "Xero sync", "Receipts"],
+		icon: "card",
+	},
+];
+---
+
+<section class="capabilities">
+	<header class="section-header">
+		<div class="section-header__lead">
+			<span class="section-header__eyebrow">
+				<span class="section-header__eyebrow-dot" aria-hidden="true"></span>
+				Everything your club runs on
+			</span>
+			<h2 class="section-header__title">
+				One platform.<br />
+				<span class="section-header__title-soft">Six jobs it does better</span><br />
+				<span class="section-header__title-soft">than six tools.</span>
+			</h2>
+		</div>
+		<p class="section-header__body">
+			Every module shares one member record, one calendar, one payments ledger. No more exports, no more reconciling
+			spreadsheets at 10pm on a Sunday.
+		</p>
+	</header>
+
+	<div class="capabilities__grid">
+		{
+			cards.map((c) => (
+				<article class="cap-card">
+					<div class="cap-card__head">
+						<span class="cap-card__icon" aria-hidden="true">
+							{c.icon === "member" && (
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<circle cx="10" cy="7" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6" />
+									<path
+										d="M3.5 17c0-3.3 2.8-5.5 6.5-5.5s6.5 2.2 6.5 5.5"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.6"
+										stroke-linecap="round"
+									/>
+								</svg>
+							)}
+							{c.icon === "calendar" && (
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<rect x="3" y="5" width="14" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6" />
+									<path d="M6 3v4M14 3v4M3 10h14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+								</svg>
+							)}
+							{c.icon === "dish" && (
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<path d="M3 7c0-2 3-3.5 7-3.5s7 1.5 7 3.5-3 3.5-7 3.5-7-1.5-7-3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" />
+									<path d="M3 7v6c0 2 3 3.5 7 3.5s7-1.5 7-3.5V7" fill="none" stroke="currentColor" stroke-width="1.6" />
+								</svg>
+							)}
+							{c.icon === "send" && (
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<path
+										d="M17 4 10 11M17 4l-4 12-3-5-5-3L17 4z"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="1.6"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+									/>
+								</svg>
+							)}
+							{c.icon === "target" && (
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+									<circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="1.6" />
+									<path d="M10 3v2M10 15v2M3 10h2M15 10h2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+								</svg>
+							)}
+							{c.icon === "card" && (
+								<svg width="20" height="20" viewBox="0 0 20 20">
+									<rect x="2.5" y="5" width="15" height="10" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.6" />
+									<path d="M2.5 9h15M6 12.5h3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+								</svg>
+							)}
+						</span>
+						<span class="cap-card__tag">{c.number}</span>
+					</div>
+					<h3 class="cap-card__title">{c.title}</h3>
+					<p class="cap-card__body">{c.body}</p>
+					<ul class="cap-card__pills">
+						{c.pills.map((p) => (
+							<li class="cap-card__pill">{p}</li>
+						))}
+					</ul>
+				</article>
+			))
+		}
+	</div>
+</section>

@@ -1,0 +1,64 @@
+---
+const cards = [
+	{
+		number: "01 · Venue",
+		metric: "$5,440",
+		title: "Venue hire wizard",
+		body: "Three-step guided quote. Date, package, deposit — all on the public page. Average booking value lifts 42% vs. a \"contact us\" form.",
+		pills: ["Stripe deposits", "Contract PDF"],
+	},
+	{
+		number: "02 · Bistro",
+		metric: "68 /wk",
+		title: "Bistro bookings block",
+		body: "Public menu, members-rate login, floor plan, sittings, SMS reminders. The right table confirmed before the chef arrives.",
+		pills: ["Members' rate", "SMS confirm"],
+	},
+	{
+		number: "03 · Join",
+		metric: "+42/mo",
+		title: "Membership join form",
+		body: "Tier picker, direct-debit setup, concessions, family bundle — straight into the committee queue. No PDF form, no bank-slip bounce.",
+		pills: ["Direct debit", "Approval queue"],
+	},
+];
+---
+
+<section class="wb-features">
+	<header class="section-header">
+		<div class="section-header__lead">
+			<span class="section-header__eyebrow">
+				<span class="section-header__eyebrow-dot" aria-hidden="true"></span>
+				Three things nobody else does
+			</span>
+			<h2 class="section-header__title">
+				Built for how clubs<br />
+				<span class="section-header__title-soft">actually make money.</span>
+			</h2>
+		</div>
+		<p class="section-header__body">
+			Not another drag-and-drop generic site tool. Three things in the builder are purpose-built — because they're where
+			the real money lives.
+		</p>
+	</header>
+
+	<div class="wb-features__grid">
+		{
+			cards.map((c) => (
+				<article class="wb-feat-card">
+					<div class="wb-feat-card__head">
+						<span class="wb-feat-card__number">{c.number}</span>
+						<span class="wb-feat-card__metric">{c.metric}</span>
+					</div>
+					<h3 class="wb-feat-card__title">{c.title}</h3>
+					<p class="wb-feat-card__body">{c.body}</p>
+					<ul class="wb-feat-card__pills">
+						{c.pills.map((p) => (
+							<li class="wb-feat-card__pill">{p}</li>
+						))}
+					</ul>
+				</article>
+			))
+		}
+	</div>
+</section>

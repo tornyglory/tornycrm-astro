@@ -1,0 +1,82 @@
+---
+const features = [
+	{ title: "Website builder", desc: "— public site with venue hire & bistro bookings baked in" },
+	{ title: "Venue hire wizard", desc: "— package pricing, deposits, contracts" },
+	{ title: "Bistro bookings", desc: "— floor plans, sittings, SMS reminders" },
+	{ title: "Membership CRM", desc: "— join forms, renewals, tiers, concessions" },
+	{ title: "Email & SMS comms", desc: "— unlimited sends, segmented" },
+	{ title: "Payments & Xero sync", desc: "— one ledger, reconciled nightly" },
+	{ title: "Unlimited admins", desc: "& Wellington-hours support" },
+];
+---
+
+<article class="pricing__plan">
+	<span class="pricing__plan-glow" aria-hidden="true"></span>
+
+	<div class="pricing__plan-side">
+		<span class="pricing__plan-eyebrow">
+			<span class="pricing__plan-eyebrow-dot" aria-hidden="true"></span>
+			One plan · everything in
+		</span>
+
+		<div class="pricing__plan-price">
+			<span class="pricing__plan-price-value">$80</span>
+			<span class="pricing__plan-price-meta">
+				/ month
+				<span class="pricing__plan-price-meta-sub">NZD · billed monthly</span>
+			</span>
+		</div>
+
+		<div class="pricing__plan-fees">
+			<span class="pricing__plan-fees-head">
+				<span class="pricing__plan-fees-head-dot" aria-hidden="true"></span>
+				Then, when you start earning
+			</span>
+			<div class="pricing__plan-fees-grid">
+				<div class="pricing__plan-fee">
+					<span class="pricing__plan-fee-value">+ 5%</span>
+					<span class="pricing__plan-fee-note">
+						of bookings · <span class="pricing__plan-fee-note-strong">venue hire &amp; bistro</span>
+					</span>
+				</div>
+				<span class="pricing__plan-fees-rule" aria-hidden="true"></span>
+				<div class="pricing__plan-fee">
+					<span class="pricing__plan-fee-value">+ $1</span>
+					<span class="pricing__plan-fee-note">
+						per event entry · <span class="pricing__plan-fee-note-strong">tournaments &amp; comps</span>
+					</span>
+				</div>
+			</div>
+			<p class="pricing__plan-fees-foot">
+				Nothing on member subs or free RSVPs. If no money moves through Torny, the only bill is the $80.
+			</p>
+		</div>
+
+		<div class="pricing__plan-actions">
+			<a href="/trial" class="btn btn--primary">Start free trial</a>
+			<a href="/demo" class="btn btn--ghost-light">Book a demo →</a>
+		</div>
+	</div>
+
+	<span class="pricing__plan-rule" aria-hidden="true"></span>
+
+	<div class="pricing__plan-features">
+		<div class="pricing__plan-features-head">Every module. No upgrades.</div>
+		{
+			features.map((f) => (
+				<div class="pricing__plan-feature">
+					<span class="pricing__plan-feature-tick" aria-hidden="true">
+						✓
+					</span>
+					<span>
+						<b>{f.title}</b> {f.desc}
+					</span>
+				</div>
+			))
+		}
+		<p class="pricing__plan-context">
+			<b>For context:</b> a one-off club website build is $8-15k and still needs a plugin for bookings. $80/month is less
+			than that bill's monthly interest.
+		</p>
+	</div>
+</article>

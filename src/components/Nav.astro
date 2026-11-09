@@ -1,0 +1,119 @@
+---
+interface Props {
+	variant?: "on-dark" | "on-light";
+}
+
+const { variant = "on-dark" } = Astro.props;
+---
+
+<nav class={`nav nav--${variant}`} aria-label="Primary">
+	<div class="nav__left">
+		<a href="/" class="nav__brand" aria-label="Torny OS">
+			<span class="nav__brand-dot" aria-hidden="true"></span>
+			<span class="nav__wordmark">Torny</span>
+			<span class="nav__wordmark-tag">OS</span>
+		</a>
+		<ul class="nav__links">
+			<li><a href="/website-builder" class="nav__link">Website builder</a></li>
+			<li><a href="/venue-hire" class="nav__link">Venue hire</a></li>
+			<li><a href="/pricing" class="nav__link">Pricing</a></li>
+			<li><a href="/#platform" class="nav__link">Platform</a></li>
+			<li><a href="/resources" class="nav__link">Resources</a></li>
+		</ul>
+	</div>
+	<div class="nav__right">
+		<a href="/login" class="nav__login">Log in</a>
+		<a href="/demo" class={`btn btn--sm ${variant === "on-dark" ? "btn--outline-light" : "btn--outline-dark"}`}>Book a demo</a>
+		<a href="/trial" class={`btn btn--sm ${variant === "on-dark" ? "btn--primary" : "btn--dark"}`}>Start free trial →</a>
+		<button
+			type="button"
+			class="nav__burger"
+			aria-label="Open menu"
+			aria-expanded="false"
+			aria-controls="nav-menu"
+			data-nav-open
+		>
+			<span class="nav__burger-line" aria-hidden="true"></span>
+			<span class="nav__burger-line" aria-hidden="true"></span>
+			<span class="nav__burger-line" aria-hidden="true"></span>
+		</button>
+	</div>
+</nav>
+
+<aside id="nav-menu" class="nav-menu" aria-hidden="true" aria-label="Mobile menu">
+	<div class="nav-menu__backdrop" data-nav-close></div>
+
+	<div class="nav-menu__panel">
+		<header class="nav-menu__head">
+			<a href="/" class="nav__brand" aria-label="Torny OS">
+				<span class="nav__brand-dot" aria-hidden="true"></span>
+				<span class="nav__wordmark">Torny</span>
+				<span class="nav__wordmark-tag">OS</span>
+			</a>
+			<button type="button" class="nav-menu__close" aria-label="Close menu" data-nav-close>
+				<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+					<path d="M4 4l10 10M14 4L4 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+				</svg>
+			</button>
+		</header>
+
+		<nav class="nav-menu__links" aria-label="Mobile primary">
+			<a href="/website-builder" class="nav-menu__link">
+				Website builder
+				<span class="nav-menu__link-arrow" aria-hidden="true">→</span>
+			</a>
+			<a href="/venue-hire" class="nav-menu__link">
+				Venue hire
+				<span class="nav-menu__link-arrow" aria-hidden="true">→</span>
+			</a>
+			<a href="/pricing" class="nav-menu__link">
+				Pricing
+				<span class="nav-menu__link-arrow" aria-hidden="true">→</span>
+			</a>
+			<a href="/resources" class="nav-menu__link">
+				Resources
+				<span class="nav-menu__link-arrow" aria-hidden="true">→</span>
+			</a>
+			<a href="/login" class="nav-menu__link nav-menu__link--muted">
+				Log in
+				<span class="nav-menu__link-arrow" aria-hidden="true">→</span>
+			</a>
+		</nav>
+
+		<div class="nav-menu__cta">
+			<a href="/demo" class="btn btn--outline-light">Book a demo</a>
+			<a href="/trial" class="btn btn--primary">Start free trial →</a>
+		</div>
+
+		<footer class="nav-menu__foot">
+			<span class="nav-menu__status">
+				<span class="nav-menu__status-dot" aria-hidden="true"></span>
+				All systems normal
+			</span>
+			<span class="nav-menu__copy">© 2026 Torny · Wellington</span>
+		</footer>
+	</div>
+</aside>
+
+<script is:inline>
+	(function () {
+		const openBtn = document.querySelector("[data-nav-open]");
+		const menu = document.getElementById("nav-menu");
+		if (!openBtn || !menu) return;
+		const closers = menu.querySelectorAll("[data-nav-close]");
+
+		function setOpen(open) {
+			menu.dataset.open = open ? "true" : "";
+			menu.setAttribute("aria-hidden", open ? "false" : "true");
+			openBtn.setAttribute("aria-expanded", open ? "true" : "false");
+			openBtn.classList.toggle("nav__burger--active", open);
+			document.body.style.overflow = open ? "hidden" : "";
+		}
+
+		openBtn.addEventListener("click", () => setOpen(true));
+		closers.forEach((el) => el.addEventListener("click", () => setOpen(false)));
+		document.addEventListener("keydown", (e) => {
+			if (e.key === "Escape" && menu.dataset.open) setOpen(false);
+		});
+	})();
+</script>

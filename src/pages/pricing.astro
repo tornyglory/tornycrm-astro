@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PricingHero from "../components/PricingHero.astro";
+import PricingPlan from "../components/PricingPlan.astro";
+import Calculator from "../components/Calculator.astro";
+import PricingFaq from "../components/PricingFaq.astro";
+import FooterCta from "../components/FooterCta.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Pricing — Torny OS">
+	<PricingHero />
+	<div class="pricing__wrap">
+		<PricingPlan />
+	</div>
+	<Calculator />
+	<PricingFaq />
+	<FooterCta />
+	<Footer />
+</Layout>

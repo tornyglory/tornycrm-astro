@@ -1,0 +1,79 @@
+---
+const templates = [
+	{
+		ext: "csv",
+		title: "Member import template",
+		desc: "Column headers, example row, data validation — ready for Torny's one-click importer.",
+		size: "12 KB",
+		downloads: "4,210 downloads",
+	},
+	{
+		ext: "pdf",
+		title: "Venue hire contract — fillable",
+		desc: "The contract 420 clubs run on. Fillable fields, co-signed via Stripe, printable fallback.",
+		size: "180 KB",
+		downloads: "2,180 downloads",
+	},
+	{
+		ext: "doc",
+		title: "AGM notice & minutes pack",
+		desc: "The resolutions page, apologies register, and the minutes template your secretary will actually use.",
+		size: "48 KB",
+		downloads: "1,540 downloads",
+	},
+	{
+		ext: "eml",
+		title: "Renewal reminder email series",
+		desc: "Three-step dunning sequence that lifts renewal rates. Plug straight into Torny comms.",
+		size: "24 KB",
+		downloads: "980 downloads",
+	},
+	{
+		ext: "pdf",
+		title: "Catering package menu card",
+		desc: "Print-ready A5 card for front-of-house. Mirrors the booking wizard options exactly.",
+		size: "320 KB",
+		downloads: "860 downloads",
+	},
+	{
+		ext: "csv",
+		title: "Chart of accounts — club edition",
+		desc: "Our pre-built Xero import, with GST codes, honoraria coded correctly, grant tracking included.",
+		size: "9 KB",
+		downloads: "1,120 downloads",
+	},
+];
+---
+
+<section class="res-templates">
+	<header class="res-templates__head">
+		<h2 class="res-templates__title">
+			Steal our <span class="res-templates__title-soft">templates.</span>
+		</h2>
+		<p class="res-templates__sub">
+			The paperwork, spreadsheets and emails that save your committee a weekend. Free, no sign-up, no watermark.
+		</p>
+	</header>
+
+	<div class="res-templates__list">
+		{
+			templates.map((t) => (
+				<div class="res-template">
+					<span class={`res-template__ext res-template__ext--${t.ext}`} aria-hidden="true">
+						.{t.ext}
+					</span>
+					<div class="res-template__body">
+						<h3 class="res-template__title">{t.title}</h3>
+						<p class="res-template__desc">{t.desc}</p>
+					</div>
+					<span class="res-template__size">{t.size}</span>
+					<span class="res-template__downloads">{t.downloads}</span>
+					<a href="#" class="res-template__cta">
+						Download
+						<span aria-hidden="true">↓</span>
+					</a>
+				</div>
+			))
+		}
+	</div>
+</section>

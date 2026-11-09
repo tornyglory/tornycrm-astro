@@ -1,0 +1,64 @@
+---
+const items = [
+	{
+		q: "What counts as a \"booking\"?",
+		a: "Only revenue that moves through Torny. Venue hires booked via the public wizard, bistro covers paid online, catering add-ons, deposits held. Walk-ins paid at the bar don't count; neither do member subs, free RSVPs, or anything your treasurer invoices manually in Xero.",
+		open: true,
+	},
+	{
+		q: "What's an \"event entry\"?",
+		a: "Tournaments, comps, ladders, mix-and-match socials — any time members pay to enter a Torny-run event. $1 per entry, capped. Free RSVPs don't count.",
+		open: false,
+	},
+	{
+		q: "Can I cap my monthly bill?",
+		a: "Yes — set a monthly ceiling and we'll waive % fees above it. Useful for clubs with one huge wedding a year that'd otherwise skew the bill.",
+		open: false,
+	},
+	{
+		q: "Are there Stripe or SMS fees on top?",
+		a: "Stripe charges standard NZ card rates (2.7% + $0.30 for card, 1% for direct debit) which are paid by you from the gross. SMS is $0.08 / message, charged at cost. Email is unlimited and included.",
+		open: false,
+	},
+	{
+		q: "What if we stop using it mid-year?",
+		a: "Cancel any time. You own your data — we hand back a full CSV export of every member, booking and payment. No restocking fee, no exit penalty.",
+		open: false,
+	},
+	{
+		q: "Discount for not-for-profit federations?",
+		a: "Yes — surf, croquet, boat, memorial-hall and other regional or national bodies get a 20% discount on the base plan when running the whole federation on Torny. Email hello@torny.co for the paperwork.",
+		open: false,
+	},
+];
+---
+
+<section class="faq faq--sand">
+	<div class="faq__lead">
+		<span class="faq__eyebrow">
+			<span class="faq__eyebrow-dot" aria-hidden="true"></span>
+			Pricing FAQ
+		</span>
+		<h2 class="faq__title">
+			The maths<br />
+			questions.
+		</h2>
+		<p class="faq__hint">
+			Still unsure? Drop us a line at hello@torny.co — we'll run the exact maths against your last month's numbers.
+		</p>
+	</div>
+
+	<div class="faq__list">
+		{
+			items.map((item) => (
+				<details class="faq__item" open={item.open}>
+					<summary class="faq__q">
+						<span class="faq__q-text">{item.q}</span>
+						<span class="faq__plus" aria-hidden="true" />
+					</summary>
+					<div class="faq__a">{item.a}</div>
+				</details>
+			))
+		}
+	</div>
+</section>

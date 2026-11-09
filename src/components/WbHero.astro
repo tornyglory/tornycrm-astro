@@ -1,0 +1,28 @@
+---
+import BuilderEditor from "./BuilderEditor.astro";
+---
+
+<section class="wb-hero">
+	<div class="wb-hero__lead">
+		<span class="wb-hero__chip">
+			<span class="wb-hero__chip-dot" aria-hidden="true"></span>
+			Website builder · in every plan
+		</span>
+		<h1 class="wb-hero__headline">
+			A website<br />
+			that <span class="wb-hero__headline-accent">pays rent.</span>
+		</h1>
+		<p class="wb-hero__body">
+			Drag the venue-hire wizard onto the ballroom page. Drop bistro bookings on the restaurant page. Attach your
+			membership form on /join. Publish. Every visitor is now a paying customer, not a Monday-morning callback.
+		</p>
+		<div class="wb-hero__actions">
+			<a href="/trial" class="btn btn--dark">Try it free</a>
+			<a href="#tour" class="btn btn--outline-dark">Watch 90s tour →</a>
+		</div>
+	</div>
+
+	<div class="wb-hero__frame">
+		<BuilderEditor />
+	</div>
+</section>

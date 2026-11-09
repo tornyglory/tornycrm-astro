@@ -1,0 +1,26 @@
+{
+  "name": "tornyos-website",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.23.4"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint:css": "stylelint \"src/**/*.{astro,css}\"",
+    "lint:css:fix": "stylelint \"src/**/*.{astro,css}\" --fix"
+  },
+  "dependencies": {
+    "astro": "^7.4.4"
+  },
+  "devDependencies": {
+    "postcss": "^8.5.32",
+    "postcss-html": "^2.0.0",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-selector-bem-pattern": "^4.0.1"
+  }
+}

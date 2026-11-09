@@ -1,0 +1,178 @@
+.wizard-card {
+	flex-shrink: 0;
+	width: 560px;
+	display: flex;
+	flex-direction: column;
+	gap: 22px;
+	padding: 28px;
+	background: var(--color-surface);
+	border-radius: 24px;
+	box-shadow: 0 40px 80px -20px rgb(0 0 0 / 50%);
+}
+
+.wizard-card__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.wizard-card__title {
+	font-family: var(--font-display);
+	font-size: 20px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: -0.015em;
+	line-height: 24px;
+	color: var(--color-ink);
+}
+
+.wizard-card__step {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: var(--color-ink-subtle);
+}
+
+.wizard-card__progress {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.wizard-card__progress-step {
+	flex: 1 1 0;
+	height: 4px;
+	border-radius: var(--radius-pill);
+	background: var(--color-hairline);
+}
+
+.wizard-card__progress-step--done {
+	background: var(--color-primary);
+}
+
+.wizard-card__picker {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.wizard-card__picker-label {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: 0.1em;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: var(--color-ink-subtle);
+}
+
+.wizard-card__option {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 16px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-hairline);
+	border-radius: 14px;
+}
+
+.wizard-card__option--selected {
+	background: var(--color-accent-soft);
+	border: 2px solid var(--color-primary);
+}
+
+.wizard-card__option-radio {
+	width: 40px;
+	height: 40px;
+	border-radius: var(--radius-pill);
+	border: 1.5px solid var(--color-hairline);
+	flex-shrink: 0;
+}
+
+.wizard-card__option-radio--active {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--color-primary);
+	border: 0;
+	color: #fff;
+}
+
+.wizard-card__option-body {
+	flex: 1 1 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.wizard-card__option-title {
+	font-family: var(--font-display);
+	font-size: 16px;
+	font-weight: var(--font-weight-semibold);
+	line-height: 20px;
+	color: var(--color-ink);
+}
+
+.wizard-card__option-sub {
+	font-family: var(--font-body);
+	font-size: 12px;
+	line-height: 16px;
+	color: var(--color-ink-subtle);
+}
+
+.wizard-card__option-price {
+	font-family: var(--font-mono);
+	font-size: 14px;
+	font-weight: var(--font-weight-bold);
+	line-height: 18px;
+	color: var(--color-ink);
+}
+
+.wizard-card__option--selected .wizard-card__option-price {
+	color: var(--color-primary-strong);
+}
+
+.wizard-card__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 16px;
+	border-top: 1px solid var(--color-hairline);
+}
+
+.wizard-card__total {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.wizard-card__total-meta {
+	font-family: var(--font-mono);
+	font-size: 10px;
+	letter-spacing: 0.1em;
+	line-height: 12px;
+	text-transform: uppercase;
+	color: var(--color-ink-subtle);
+}
+
+.wizard-card__total-value {
+	font-family: var(--font-display);
+	font-size: 20px;
+	font-weight: var(--font-weight-bold);
+	letter-spacing: -0.015em;
+	line-height: 24px;
+	color: var(--color-ink);
+}
+
+.wizard-card__total-value-sub {
+	font-size: 12px;
+	font-weight: var(--font-weight-regular);
+	line-height: 16px;
+}
+
+.wizard-card__actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}

@@ -1,0 +1,95 @@
+---
+const articles = [
+	{
+		cat: "Venue hire",
+		catVariant: "primary",
+		read: "6 min",
+		title: "Pricing your ballroom for 2027",
+		excerpt: "Why most clubs undercharge by $400 a wedding — and how to lift the base package without scaring off locals.",
+		author: "RT",
+		authorName: "Ria Tipene",
+		date: "28 Oct 26",
+	},
+	{
+		cat: "Membership",
+		catVariant: "mint",
+		read: "4 min",
+		title: "The grace period that keeps your renewals above 90%",
+		excerpt: "A short script, a specific day, and the one SMS that converts lapsed subs. Tested across 200 clubs.",
+		author: "HM",
+		authorName: "Hemi McKenzie",
+		date: "22 Oct 26",
+	},
+	{
+		cat: "Payments",
+		catVariant: "ochre",
+		read: "7 min",
+		title: "Reconciling Stripe to Xero in under five minutes",
+		excerpt: "The nightly bundle, how it maps to your chart of accounts, and the one setting most treasurers miss.",
+		author: "MK",
+		authorName: "Mele Kaufusi",
+		date: "19 Oct 26",
+	},
+	{
+		cat: "Marketing",
+		catVariant: "violet",
+		read: "5 min",
+		title: "Writing a venue hire page that converts",
+		excerpt: "The six content blocks every converting ballroom page shares — plus two to drop that nobody reads.",
+		author: "JV",
+		authorName: "Jesse Verrall",
+		date: "14 Oct 26",
+	},
+	{
+		cat: "Bistro",
+		catVariant: "ochre",
+		read: "9 min",
+		title: "Two sittings on a Friday without losing covers",
+		excerpt: "Floor-plan maths, SMS prompts, and the eight-second rule that gets table 4 flipped before 8:00.",
+		author: "SK",
+		authorName: "Sarah King",
+		date: "08 Oct 26",
+	},
+	{
+		cat: "Changelog",
+		catVariant: "neutral",
+		read: "3 min",
+		title: "October: calendar sync, dietary flags & dark mode",
+		excerpt: "What we shipped last month, what's rolling out next, and which small-but-mighty bug we finally squashed.",
+		author: "TC",
+		authorName: "Tom Caddick",
+		date: "01 Oct 26",
+	},
+];
+---
+
+<section class="res-articles">
+	<header class="res-articles__head">
+		<h2 class="res-articles__title">
+			Latest <span class="res-articles__title-soft">articles</span>
+		</h2>
+		<div class="res-articles__filter">
+			Sorted by <strong>most recent</strong>
+		</div>
+	</header>
+
+	<div class="res-articles__grid">
+		{
+			articles.map((a) => (
+				<a href="#" class="res-article">
+					<div class="res-article__meta">
+						<span class={`res-article__cat res-article__cat--${a.catVariant}`}>{a.cat}</span>
+						<span class="res-article__read">{a.read} read</span>
+					</div>
+					<h3 class="res-article__title">{a.title}</h3>
+					<p class="res-article__excerpt">{a.excerpt}</p>
+					<div class="res-article__footer">
+						<span class="res-article__avatar" aria-hidden="true">{a.author}</span>
+						<span class="res-article__author">{a.authorName}</span>
+						<span class="res-article__date">{a.date}</span>
+					</div>
+				</a>
+			))
+		}
+	</div>
+</section>

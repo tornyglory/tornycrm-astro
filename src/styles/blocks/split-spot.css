@@ -1,0 +1,138 @@
+.split-spot {
+	width: 100%;
+	padding: 140px 72px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 96px;
+	background: var(--color-surface);
+}
+
+.split-spot--sand {
+	background: var(--color-surface-sand);
+}
+
+.split-spot--dark {
+	background: var(--color-ink);
+	color: #fff;
+}
+
+.split-spot--dark .split-spot__title,
+.split-spot--dark .split-spot__body,
+.split-spot--dark .split-spot__check-text {
+	color: #fff;
+}
+
+.split-spot--dark .split-spot__body {
+	color: rgb(255 255 255 / 70%);
+}
+
+.split-spot--reverse .split-spot__lead {
+	order: 2;
+}
+
+.split-spot__lead {
+	flex: 1 1 0;
+	max-width: 520px;
+	display: flex;
+	flex-direction: column;
+	gap: 28px;
+}
+
+.split-spot__eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--color-primary);
+	font-family: var(--font-mono);
+	font-size: var(--text-xs);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: 0.14em;
+	line-height: 16px;
+	text-transform: uppercase;
+}
+
+.split-spot__eyebrow--sky {
+	color: var(--color-sky-1);
+}
+
+.split-spot__eyebrow-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: var(--radius-pill);
+	background: var(--color-primary);
+	flex-shrink: 0;
+}
+
+.split-spot__eyebrow-dot--sky {
+	background: var(--color-sky-1);
+}
+
+.split-spot__title {
+	font-family: var(--font-display);
+	font-size: 64px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: -0.025em;
+	line-height: 100%;
+	color: var(--color-ink);
+	margin: 0;
+}
+
+.split-spot__title-accent {
+	color: var(--color-primary);
+}
+
+.split-spot__title-accent--sky {
+	color: var(--color-sky-2);
+}
+
+.split-spot__body {
+	font-family: var(--font-body);
+	font-size: 18px;
+	line-height: 160%;
+	color: var(--color-ink);
+}
+
+.split-spot__checks {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	padding-top: 4px;
+}
+
+.split-spot__check {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.split-spot__check-tick {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border-radius: var(--radius-pill);
+	background: var(--color-ink);
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.split-spot__check-tick--primary {
+	background: var(--color-primary);
+}
+
+.split-spot__check-text {
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 150%;
+	color: var(--color-ink);
+}
+
+.split-spot__check-text b {
+	font-weight: var(--font-weight-bold);
+}
+
+.split-spot__cta {
+	padding-top: 12px;
+}

@@ -1,0 +1,66 @@
+.vh-features {
+	width: 100%;
+	padding: 140px 72px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 72px;
+	background: var(--color-surface-sand);
+}
+
+.vh-features__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: var(--spacing-6);
+	max-width: 1296px;
+	width: 100%;
+}
+
+.vh-feat-card {
+	min-height: 280px;
+	padding: 36px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-hairline);
+	border-radius: 20px;
+}
+
+.vh-feat-card__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: var(--color-ink);
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.vh-feat-card__number {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	letter-spacing: 0.14em;
+	line-height: 14px;
+	text-transform: uppercase;
+	color: var(--color-mute);
+}
+
+.vh-feat-card__title {
+	font-family: var(--font-display);
+	font-size: 24px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: -0.02em;
+	line-height: 105%;
+	color: var(--color-ink);
+	margin: 0;
+}
+
+.vh-feat-card__body {
+	font-family: var(--font-body);
+	font-size: 14px;
+	line-height: 160%;
+	color: var(--color-ink);
+}

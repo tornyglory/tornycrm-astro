@@ -1,0 +1,490 @@
+/* ============================================================
+   Mobile overrides — single breakpoint at 768px.
+   Imported last so it wins specificity against block defaults.
+   ============================================================ */
+
+@media (width <= 768px) {
+	/* ---------- NAV ---------- */
+	.nav {
+		padding: 16px 20px;
+	}
+
+	.nav__links,
+	.nav__login,
+	.nav__right .btn {
+		display: none;
+	}
+
+	.nav__burger {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.nav__left {
+		gap: 0;
+	}
+
+	/* ---------- HERO ---------- */
+	.hero__inner {
+		min-height: auto;
+	}
+
+	.hero__body {
+		padding: 32px 20px 40px;
+		gap: 24px;
+		max-width: none;
+	}
+
+	.hero__headline {
+		font-size: 44px;
+	}
+
+	.hero__subtitle {
+		font-size: 16px;
+		max-width: none;
+	}
+
+	.hero__actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 12px;
+		width: 100%;
+	}
+
+	.hero__actions .btn {
+		width: 100%;
+	}
+
+	.hero__note {
+		justify-content: center;
+		margin-left: 0;
+		margin-top: 4px;
+	}
+
+	.hero__play-chip {
+		display: none;
+	}
+
+	.hero__card {
+		position: static;
+		width: auto;
+		margin: 0 20px 40px;
+	}
+
+	/* ---------- TRUST STRIP ---------- */
+	.trust-strip {
+		padding: 48px 20px;
+		gap: 24px;
+	}
+
+	.trust-strip__label {
+		text-align: center;
+	}
+
+	.trust-strip__logos {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 20px 32px;
+	}
+
+	.trust-strip__logo--display-sm,
+	.trust-strip__logo--medium {
+		font-size: 18px;
+		line-height: 22px;
+	}
+
+	.trust-strip__logo--light {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	.trust-strip__logo--block,
+	.trust-strip__logo--signage {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	.trust-strip__logo--condensed {
+		font-size: 14px;
+		line-height: 18px;
+	}
+
+	/* ---------- SECTION HEADER ---------- */
+	.section-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+	}
+
+	.section-header__title {
+		font-size: 40px;
+	}
+
+	.section-header__body {
+		max-width: none;
+		padding-bottom: 0;
+	}
+
+	/* ---------- CAPABILITIES ---------- */
+	.capabilities {
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.capabilities__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.cap-card {
+		min-height: auto;
+		padding: 24px;
+		gap: 16px;
+	}
+
+	.cap-card__title {
+		font-size: 24px;
+	}
+
+	/* ---------- BUILDER SPOT ---------- */
+	.builder-spot {
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.builder-spot__editor {
+		flex-direction: column;
+		min-height: auto;
+		padding: 10px;
+		gap: 10px;
+	}
+
+	.builder-spot__palette {
+		width: auto;
+		order: 2;
+	}
+
+	.builder-spot__hero-nav,
+	.builder-spot__url-wrap {
+		display: none;
+	}
+
+	.builder-spot__hero {
+		padding: 24px 20px;
+	}
+
+	.builder-spot__hero-title {
+		font-size: 26px;
+	}
+
+	.builder-spot__block-panel {
+		padding: 24px 20px;
+	}
+
+	.builder-spot__fields {
+		flex-direction: column;
+	}
+
+	.builder-spot__footer {
+		padding: 16px 20px;
+		flex-direction: column;
+		gap: 10px;
+		align-items: flex-start;
+	}
+
+	/* ---------- SPLIT SPOT (Membership + Venue) ---------- */
+	.split-spot {
+		flex-direction: column;
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.split-spot--reverse .split-spot__lead {
+		order: 1;
+	}
+
+	.split-spot__lead {
+		max-width: none;
+	}
+
+	.split-spot__title {
+		font-size: 36px;
+	}
+
+	.split-spot__body {
+		font-size: 15px;
+	}
+
+	.split-spot__cta .btn {
+		width: 100%;
+	}
+
+	/* Member card */
+	.member-card {
+		width: auto;
+		padding: 20px;
+		gap: 16px;
+	}
+
+	.member-card__head {
+		flex-wrap: wrap;
+	}
+
+	.member-card__row-date,
+	.member-card__row-amount {
+		width: 52px;
+	}
+
+	.member-card__row {
+		gap: 10px;
+		padding: 10px;
+	}
+
+	/* Wizard card */
+	.wizard-card {
+		width: auto;
+		padding: 20px;
+	}
+
+	.wizard-card__option {
+		padding: 12px;
+		gap: 12px;
+	}
+
+	.wizard-card__option-radio {
+		width: 32px;
+		height: 32px;
+	}
+
+	.wizard-card__footer {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 14px;
+	}
+
+	.wizard-card__actions {
+		justify-content: flex-end;
+	}
+
+	/* ---------- DAILY OPS ---------- */
+	.daily-ops {
+		padding: 64px 20px;
+	}
+
+	.daily-ops__split {
+		flex-direction: column;
+	}
+
+	.ops-card {
+		padding: 24px;
+		min-height: auto;
+		gap: 20px;
+	}
+
+	.ops-card__title {
+		font-size: 28px;
+	}
+
+	.tables-mock__grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.comms-mock__row {
+		padding: 10px;
+	}
+
+	/* ---------- TESTIMONIAL ---------- */
+	.testimonial {
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.testimonial__quote {
+		font-size: 28px;
+	}
+
+	.testimonial__stats {
+		flex-direction: column;
+		border-bottom: 0;
+	}
+
+	.testimonial__stat {
+		border-right: 0;
+		border-bottom: 1px solid var(--color-hairline);
+		padding: 24px 0;
+	}
+
+	.testimonial__stat:last-child {
+		border-bottom: 0;
+	}
+
+	.testimonial__stat-value {
+		font-size: 44px;
+	}
+
+	.testimonial__stat-sub,
+	.testimonial__stat-up {
+		font-size: 24px;
+	}
+
+	/* ---------- PRICING ---------- */
+	.pricing {
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.pricing__title {
+		font-size: 40px;
+	}
+
+	.pricing__body {
+		font-size: 15px;
+	}
+
+	.pricing__plan {
+		flex-direction: column;
+		gap: 32px;
+		padding: 32px 24px;
+	}
+
+	.pricing__plan-rule {
+		display: none;
+	}
+
+	.pricing__plan-side {
+		max-width: none;
+	}
+
+	.pricing__plan-price-value {
+		font-size: 72px;
+	}
+
+	.pricing__plan-fees-grid {
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	.pricing__plan-fees-rule {
+		display: none;
+	}
+
+	.pricing__plan-fee-value {
+		font-size: 28px;
+	}
+
+	.pricing__plan-actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 10px;
+	}
+
+	.pricing__plan-actions .btn {
+		width: 100%;
+	}
+
+	/* ---------- FAQ ---------- */
+	.faq {
+		flex-direction: column;
+		padding: 64px 20px;
+		gap: 32px;
+	}
+
+	.faq__lead {
+		max-width: none;
+	}
+
+	.faq__title {
+		font-size: 40px;
+	}
+
+	.faq__q {
+		padding: 20px 0;
+	}
+
+	.faq__q-text {
+		font-size: 17px;
+	}
+
+	/* ---------- FOOTER CTA ---------- */
+	.footer-cta {
+		padding: 64px 20px;
+	}
+
+	.footer-cta__headline {
+		font-size: 44px;
+	}
+
+	.footer-cta__sub {
+		font-size: 16px;
+	}
+
+	.footer-cta__actions {
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+		gap: 10px;
+	}
+
+	.footer-cta__actions .btn {
+		width: 100%;
+	}
+
+	/* ---------- FOOTER ---------- */
+	.footer {
+		padding: 48px 20px 32px;
+		gap: 32px;
+	}
+
+	.footer__grid {
+		flex-direction: column;
+		gap: 32px;
+	}
+
+	.footer__brand {
+		max-width: none;
+	}
+
+	.footer__legal {
+		flex-direction: column;
+		gap: 16px;
+		align-items: flex-start;
+		padding-top: 24px;
+	}
+
+	.footer__legal-links {
+		flex-wrap: wrap;
+		gap: 14px 20px;
+	}
+}
+
+/* ============================================================
+   Tablet breakpoint — soften the biggest desktop choices
+   between 768px and 1024px.
+   ============================================================ */
+
+@media (width <= 1024px) and (width >= 769px) {
+	.capabilities__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.hero__headline {
+		font-size: 72px;
+	}
+
+	.hero__card {
+		width: 360px;
+	}
+
+	.section-header__title {
+		font-size: 56px;
+	}
+
+	.testimonial__quote {
+		font-size: 44px;
+	}
+
+	.footer__grid {
+		flex-wrap: wrap;
+		gap: 40px;
+	}
+}

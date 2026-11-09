@@ -1,0 +1,50 @@
+---
+const steps = [
+	{
+		n: "01",
+		title: "Pick a template",
+		body: "Cossie club, RSA, workingmen's, surf, croquet. Each template ships with your pages — About, Venue hire, Bistro, Join, Events — pre-wired.",
+	},
+	{
+		n: "02",
+		title: "Drop the revenue blocks",
+		body: "Venue hire wizard on the ballroom page. Bistro bookings on the restaurant page. Join form on /join. Done in ten minutes.",
+	},
+	{
+		n: "03",
+		title: "Point your domain",
+		body: "Set a CNAME. SSL & CDN handled. We'll help with the DNS if the handover docs are still in the clubroom shed.",
+	},
+	{
+		n: "04",
+		title: "Publish, start billing",
+		body: "Click Publish. First booking lands in your inbox and your calendar at the same time. $80 a month. Keep the rest.",
+	},
+];
+---
+
+<section class="wb-steps">
+	<div class="wb-steps__glow" aria-hidden="true"></div>
+
+	<header class="wb-steps__head">
+		<span class="wb-steps__eyebrow">
+			<span class="wb-steps__eyebrow-dot" aria-hidden="true"></span>
+			How it works
+		</span>
+		<h2 class="wb-steps__title">
+			From blank page to <span class="wb-steps__title-accent">paying bookings</span> in a weekend.
+		</h2>
+	</header>
+
+	<div class="wb-steps__grid">
+		{
+			steps.map((s) => (
+				<article class="wb-step">
+					<div class="wb-step__number">{s.n}</div>
+					<h3 class="wb-step__title">{s.title}</h3>
+					<p class="wb-step__body">{s.body}</p>
+				</article>
+			))
+		}
+	</div>
+</section>

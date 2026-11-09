@@ -1,0 +1,45 @@
+---
+import Nav from "./Nav.astro";
+
+const tags = ["All", "Treasurer", "Secretary", "President", "Marketing", "Venue hire", "Bistro", "Membership", "Payments"];
+---
+
+<Nav variant="on-light" />
+
+<section class="res-hero">
+	<div class="res-hero__lead">
+		<span class="res-hero__chip">
+			<span class="res-hero__chip-dot" aria-hidden="true"></span>
+			Resources · updated weekly
+		</span>
+		<h1 class="res-hero__headline">
+			The club operator's<br />
+			<span class="res-hero__headline-soft">library.</span>
+		</h1>
+		<p class="res-hero__body">
+			Guides, playbooks and templates — written for the person who stayed late to lock up the clubrooms. Steal
+			everything.
+		</p>
+
+		<form class="res-hero__search" role="search" onsubmit="return false;">
+			<span class="res-hero__search-icon" aria-hidden="true">
+				<svg width="18" height="18" viewBox="0 0 18 18">
+					<circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+					<path d="M12 12l4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+				</svg>
+			</span>
+			<input class="res-hero__search-input" type="search" placeholder="Search guides, templates, playbooks…" />
+			<span class="res-hero__search-kbd" aria-hidden="true">⌘ K</span>
+		</form>
+
+		<div class="res-hero__tags" role="list">
+			{
+				tags.map((t, i) => (
+					<a href="#" class={`res-hero__tag ${i === 0 ? "res-hero__tag--active" : ""}`} role="listitem">
+						{t}
+					</a>
+				))
+			}
+		</div>
+	</div>
+</section>

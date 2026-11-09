@@ -1,0 +1,32 @@
+---
+import Nav from "./Nav.astro";
+import WizardCard from "./WizardCard.astro";
+---
+
+<section class="vh-hero">
+	<div class="vh-hero__bg" aria-hidden="true"></div>
+	<Nav variant="on-dark" />
+
+	<div class="vh-hero__body">
+		<div class="vh-hero__lead">
+			<span class="vh-hero__chip">
+				<span class="vh-hero__chip-dot" aria-hidden="true"></span>
+				Venue hire &amp; events
+			</span>
+			<h1 class="vh-hero__headline">
+				The venue<br />
+				books <span class="vh-hero__headline-accent">itself.</span>
+			</h1>
+			<p class="vh-hero__body-copy">
+				Weddings, 60ths, corporate end-of-years, memorial hires. A three-step wizard your public visitors complete in
+				three minutes — and the deposit is in your bank by the time your treasurer gets off the ride-on mower.
+			</p>
+			<div class="vh-hero__actions">
+				<a href="#wizard" class="btn btn--primary">Try the wizard →</a>
+				<a href="/demo" class="btn btn--ghost-light">Book a demo</a>
+			</div>
+		</div>
+
+		<WizardCard />
+	</div>
+</section>

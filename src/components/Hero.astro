@@ -1,0 +1,92 @@
+---
+import Nav from "./Nav.astro";
+---
+
+<section class="hero">
+	<video
+		class="hero__video"
+		autoplay
+		loop
+		muted
+		playsinline
+		preload="auto"
+		aria-hidden="true"
+	>
+		<source src="/hero.mp4" type="video/mp4" />
+	</video>
+	<div class="hero__bg" aria-hidden="true"></div>
+
+	<button type="button" class="hero__play-chip" aria-label="Watch Thorndon Club story">
+		<span class="hero__play-chip-icon" aria-hidden="true">
+			<svg width="9" height="10" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg">
+				<path d="M0 0.5v9l9-4.5-9-4.5z" fill="currentColor"></path>
+			</svg>
+		</span>
+		Watch · Royal Wgtn in 90s
+	</button>
+
+	<div class="hero__inner">
+		<Nav variant="on-dark" />
+
+		<div class="hero__body">
+			<span class="eyebrow eyebrow--on-dark">
+				<span class="eyebrow__dot" aria-hidden="true"></span>
+				The revenue platform for clubs
+			</span>
+
+			<h1 class="hero__headline">
+				Turn club assets<br />into revenue.<br />
+				<span class="hero__headline-muted">On autopilot.</span>
+			</h1>
+
+			<p class="hero__subtitle">
+				Your clubrooms are a six-figure asset. Torny OS turns them into one — leasing your venue, filling your bistro,
+				selling memberships and reconciling every dollar back to Xero.
+			</p>
+
+			<div class="hero__actions">
+				<a href="/trial" class="btn btn--primary">Start free trial</a>
+				<a href="/demo" class="btn btn--ghost-light">Book a demo →</a>
+				<span class="hero__note">
+					<span class="hero__note-dot" aria-hidden="true"></span>
+					Live in 2 weeks · No credit card
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<aside class="hero__card" aria-label="Live club dashboard preview">
+		<div class="hero__card-head">
+			<div class="hero__card-brand">
+				<span class="hero__card-badge" aria-hidden="true">TC</span>
+				<span class="hero__card-brand-name">Thorndon Club</span>
+			</div>
+			<span class="hero__card-status">Live now</span>
+		</div>
+
+		<div class="hero__card-rule" aria-hidden="true"></div>
+
+		<div class="hero__card-stats">
+			<div class="hero__card-stat">
+				<span class="hero__card-stat-label">Venue hire · wk</span>
+				<span class="hero__card-stat-value">$18.4k</span>
+				<span class="hero__card-stat-delta">+42% vs last wk</span>
+			</div>
+			<div class="hero__card-stat">
+				<span class="hero__card-stat-label">Bistro covers</span>
+				<span class="hero__card-stat-value">286</span>
+				<span class="hero__card-stat-delta">Fri &amp; Sat full</span>
+			</div>
+		</div>
+
+		<div class="hero__card-rule" aria-hidden="true"></div>
+
+		<div class="hero__card-event">
+			<span class="hero__card-event-bar" aria-hidden="true"></span>
+			<div>
+				<div class="hero__card-event-title">Hinton 60th · Ballroom lease</div>
+				<div class="hero__card-event-meta">Sat 10:00 · 80 pax · $5,440 paid</div>
+			</div>
+		</div>
+	</aside>
+</section>

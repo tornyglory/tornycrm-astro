@@ -1,0 +1,130 @@
+.faq {
+	width: 100%;
+	padding: 140px 72px;
+	display: flex;
+	justify-content: center;
+	gap: 80px;
+	background: var(--color-surface);
+}
+
+.faq--sand {
+	background: var(--color-surface-sand);
+}
+
+.faq__lead {
+	flex-shrink: 0;
+	max-width: 380px;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-5);
+}
+
+.faq__eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--color-primary);
+	font-family: var(--font-mono);
+	font-size: var(--text-xs);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: 0.14em;
+	line-height: 16px;
+	text-transform: uppercase;
+}
+
+.faq__eyebrow-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: var(--radius-pill);
+	background: var(--color-primary);
+	flex-shrink: 0;
+}
+
+.faq__title {
+	font-family: var(--font-display);
+	font-size: 48px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: -0.025em;
+	line-height: 100%;
+	color: var(--color-ink);
+	margin: 0;
+}
+
+.faq__hint {
+	font-family: var(--font-body);
+	font-size: 15px;
+	line-height: 160%;
+	color: var(--color-ink-subtle);
+}
+
+.faq__list {
+	flex: 1 1 0;
+	max-width: 820px;
+	border-top: 1px solid var(--color-hairline);
+}
+
+.faq__item {
+	border-bottom: 1px solid var(--color-hairline);
+}
+
+.faq__item[open] .faq__plus {
+	background: var(--color-ink);
+	border-color: var(--color-ink);
+	color: #fff;
+}
+
+.faq__item[open] .faq__plus::after {
+	content: "−";
+}
+
+.faq__item:not([open]) .faq__plus::after {
+	content: "+";
+}
+
+.faq__q {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-6);
+	padding: 28px 4px;
+	cursor: pointer;
+	list-style: none;
+}
+
+.faq__q::-webkit-details-marker {
+	display: none;
+}
+
+.faq__q-text {
+	font-family: var(--font-display);
+	font-size: 20px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: -0.015em;
+	line-height: 24px;
+	color: var(--color-ink);
+}
+
+.faq__plus {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 28px;
+	height: 28px;
+	border: 1px solid var(--color-hairline);
+	border-radius: var(--radius-pill);
+	color: var(--color-ink);
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 20px;
+	flex-shrink: 0;
+	transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.faq__a {
+	max-width: 680px;
+	padding: 0 4px 28px;
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 160%;
+	color: var(--color-ink);
+}
