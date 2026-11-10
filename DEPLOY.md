@@ -38,10 +38,17 @@ az staticwebapp secrets list \
   --query "properties.apiKey" -o tsv
 ```
 
-Add it to the repo secrets:
+Azure auto-adds this secret when the SWA is created via GitHub integration
+(name format: `AZURE_STATIC_WEB_APPS_API_TOKEN_<SWA-NAME>_<SUFFIX>`). The
+current workflow references
+`AZURE_STATIC_WEB_APPS_API_TOKEN_AMBITIOUS_GLACIER_038F7EF10`.
+
+If you create the SWA a different way (CLI, or without GitHub integration),
+set the secret manually:
 
 ```bash
-gh secret set AZURE_STATIC_WEB_APPS_API_TOKEN --repo tornyglory/tornycrm-astro
+gh secret set AZURE_STATIC_WEB_APPS_API_TOKEN_AMBITIOUS_GLACIER_038F7EF10 \
+  --repo tornyglory/tornycrm-astro
 ```
 
 (Paste the token when prompted.)
