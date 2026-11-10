@@ -37,7 +37,8 @@
 	}
 
 	.hero__headline {
-		font-size: 44px;
+		font-size: 60px;
+		letter-spacing: -0.04em;
 	}
 
 	.hero__subtitle {
@@ -118,7 +119,8 @@
 	}
 
 	.section-header__title {
-		font-size: 40px;
+		font-size: 48px;
+		letter-spacing: -0.03em;
 	}
 
 	.section-header__body {
@@ -144,6 +146,10 @@
 
 	.cap-card__title {
 		font-size: 24px;
+	}
+
+	.cap-card__pills {
+		display: none;
 	}
 
 	/* ---------- BUILDER SPOT ---------- */
@@ -208,7 +214,8 @@
 	}
 
 	.split-spot__title {
-		font-size: 36px;
+		font-size: 44px;
+		letter-spacing: -0.03em;
 	}
 
 	.split-spot__body {
@@ -300,7 +307,8 @@
 	}
 
 	.testimonial__quote {
-		font-size: 28px;
+		font-size: 36px;
+		letter-spacing: -0.025em;
 	}
 
 	.testimonial__stats {
@@ -309,6 +317,13 @@
 	}
 
 	.testimonial__stat {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-template-areas:
+			"label value"
+			"note value";
+		align-items: center;
+		gap: 4px 20px;
 		border-right: 0;
 		border-bottom: 1px solid var(--color-hairline);
 		padding: 24px 0;
@@ -318,8 +333,25 @@
 		border-bottom: 0;
 	}
 
+	/* Hide Setup time (4th stat) on mobile — matches Paper 3-stat layout */
+	.testimonial__stat:nth-child(4) {
+		display: none;
+	}
+
+	.testimonial__stat-label {
+		grid-area: label;
+	}
+
 	.testimonial__stat-value {
-		font-size: 44px;
+		grid-area: value;
+		align-self: center;
+		font-size: 52px;
+		line-height: 100%;
+		text-align: right;
+	}
+
+	.testimonial__stat-note {
+		grid-area: note;
 	}
 
 	.testimonial__stat-sub,
@@ -334,7 +366,8 @@
 	}
 
 	.pricing__title {
-		font-size: 40px;
+		font-size: 44px;
+		letter-spacing: -0.03em;
 	}
 
 	.pricing__body {
@@ -356,7 +389,12 @@
 	}
 
 	.pricing__plan-price-value {
-		font-size: 72px;
+		font-size: 112px;
+		letter-spacing: -0.04em;
+	}
+
+	.pricing__plan-context {
+		display: none;
 	}
 
 	.pricing__plan-fees-grid {
@@ -394,7 +432,8 @@
 	}
 
 	.faq__title {
-		font-size: 40px;
+		font-size: 56px;
+		letter-spacing: -0.035em;
 	}
 
 	.faq__q {
@@ -402,7 +441,12 @@
 	}
 
 	.faq__q-text {
-		font-size: 17px;
+		font-size: 18px;
+	}
+
+	.faq__plus {
+		width: 32px;
+		height: 32px;
 	}
 
 	/* ---------- FOOTER CTA ---------- */
@@ -411,7 +455,13 @@
 	}
 
 	.footer-cta__headline {
-		font-size: 44px;
+		font-size: 52px;
+		letter-spacing: -0.035em;
+	}
+
+	.footer-cta__inner {
+		align-items: center;
+		text-align: center;
 	}
 
 	.footer-cta__sub {
@@ -429,6 +479,433 @@
 		width: 100%;
 	}
 
+	/* ---------- WB HERO ---------- */
+	.wb-hero {
+		padding: 32px 20px 48px;
+		gap: 40px;
+	}
+
+	.wb-hero__headline {
+		font-size: 60px;
+		letter-spacing: -0.04em;
+	}
+
+	.wb-hero__body {
+		font-size: 16px;
+	}
+
+	.wb-hero__actions {
+		flex-direction: column;
+		width: 100%;
+		gap: 10px;
+	}
+
+	.wb-hero__actions .btn {
+		width: 100%;
+	}
+
+	.wb-hero__frame {
+		padding: 10px;
+	}
+
+	/* ---------- WB FEATURES + STEPS ---------- */
+	.wb-features {
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.wb-features__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.wb-feat-card {
+		min-height: auto;
+		padding: 28px 24px;
+	}
+
+	.wb-steps {
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.wb-steps__title {
+		font-size: 44px;
+		letter-spacing: -0.03em;
+	}
+
+	.wb-steps__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.wb-step {
+		padding: 24px;
+	}
+
+	.wb-step__number {
+		font-size: 48px;
+	}
+
+	/* ---------- VH HERO ---------- */
+	.vh-hero__body {
+		flex-direction: column;
+		padding: 20px 20px 48px;
+		gap: 32px;
+	}
+
+	.vh-hero__lead {
+		max-width: none;
+	}
+
+	.vh-hero__headline {
+		font-size: 60px;
+		letter-spacing: -0.04em;
+	}
+
+	.vh-hero__body-copy {
+		font-size: 16px;
+	}
+
+	.vh-hero__actions {
+		flex-direction: column;
+		width: 100%;
+		gap: 10px;
+	}
+
+	.vh-hero__actions .btn {
+		width: 100%;
+	}
+
+	/* ---------- VH FEATURES ---------- */
+	.vh-features {
+		padding: 64px 20px;
+		gap: 40px;
+	}
+
+	.vh-features__grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* ---------- PRICING HERO ---------- */
+	.pricing-hero {
+		padding: 40px 20px 32px;
+		gap: 20px;
+	}
+
+	.pricing-hero__title {
+		font-size: 56px;
+		letter-spacing: -0.04em;
+	}
+
+	.pricing-hero__body {
+		font-size: 16px;
+	}
+
+	.pricing__wrap {
+		padding: 0 20px 64px;
+	}
+
+	/* ---------- CALCULATOR ---------- */
+	.calculator {
+		padding: 64px 20px;
+		gap: 32px;
+	}
+
+	.calculator__head {
+		flex-direction: column;
+		gap: 20px;
+		align-items: flex-start;
+	}
+
+	.calculator__title {
+		font-size: 36px;
+	}
+
+	.calculator__card {
+		flex-direction: column;
+	}
+
+	.calculator__inputs,
+	.calculator__outputs {
+		padding: 28px 24px;
+	}
+
+	.calculator__total-value {
+		font-size: 64px;
+	}
+
+	/* ---------- RES HERO ---------- */
+	.res-hero {
+		padding: 32px 20px 48px;
+		gap: 24px;
+	}
+
+	.res-hero__headline {
+		font-size: 60px;
+		letter-spacing: -0.04em;
+	}
+
+	.res-hero__body {
+		font-size: 16px;
+	}
+
+	.res-hero__search {
+		padding: 12px 16px;
+	}
+
+	.res-hero__search-input {
+		font-size: 14px;
+	}
+
+	.res-hero__search-kbd {
+		display: none;
+	}
+
+	/* ---------- RES SECTIONS ---------- */
+	.res-featured {
+		padding: 48px 20px 64px;
+		gap: 24px;
+	}
+
+	.res-featured__head {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.res-featured__title {
+		font-size: 32px;
+	}
+
+	.res-featured__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.res-feat-card {
+		padding: 28px 24px;
+	}
+
+	.res-feat-card--hero {
+		min-height: auto;
+	}
+
+	.res-feat-card--hero .res-feat-card__title {
+		font-size: 32px;
+	}
+
+	.res-feat-card__title {
+		font-size: 24px;
+	}
+
+	.res-roles {
+		padding: 64px 20px;
+		gap: 32px;
+	}
+
+	.res-roles__head {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	.res-roles__title {
+		font-size: 36px;
+	}
+
+	.res-roles__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.res-articles {
+		padding: 64px 20px;
+		gap: 32px;
+	}
+
+	.res-articles__head {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+	}
+
+	.res-articles__title {
+		font-size: 36px;
+	}
+
+	.res-articles__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.res-templates {
+		padding: 64px 20px;
+		gap: 32px;
+	}
+
+	.res-templates__head {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+	}
+
+	.res-templates__title {
+		font-size: 36px;
+	}
+
+	.res-template {
+		flex-wrap: wrap;
+		gap: 12px;
+		padding: 20px 8px;
+	}
+
+	.res-template__body {
+		flex: 1 1 100%;
+		order: 2;
+	}
+
+	.res-template__size,
+	.res-template__downloads {
+		display: none;
+	}
+
+	.res-template__cta {
+		order: 3;
+		margin-left: auto;
+	}
+
+	.res-support {
+		padding: 64px 20px;
+	}
+
+	.res-support__inner {
+		flex-direction: column;
+	}
+
+	.res-support__lead {
+		max-width: none;
+		padding: 40px 28px;
+		border-right: 0;
+		border-bottom: 1px solid rgb(255 255 255 / 10%);
+	}
+
+	.res-support__title {
+		font-size: 36px;
+	}
+
+	.res-support__channels {
+		padding: 24px;
+	}
+
+	/* ---------- DEMO HERO ---------- */
+	.demo-hero {
+		flex-direction: column;
+		padding: 32px 20px 48px;
+		gap: 32px;
+	}
+
+	.demo-hero__lead {
+		max-width: none;
+		padding-top: 0;
+	}
+
+	.demo-hero__headline {
+		font-size: 56px;
+		letter-spacing: -0.04em;
+	}
+
+	.demo-hero__scheduler {
+		max-width: none;
+		padding: 24px;
+	}
+
+	.demo-hero__sched-head {
+		flex-wrap: wrap;
+		gap: 10px;
+	}
+
+	.demo-hero__sched-slots {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.demo-hero__sched-cta {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 12px;
+	}
+
+	/* ---------- DEMO AGENDA + TEAM + ALT ---------- */
+	.demo-agenda {
+		padding: 64px 20px;
+	}
+
+	.demo-agenda__head {
+		flex-direction: column;
+		gap: 20px;
+		align-items: flex-start;
+	}
+
+	.demo-agenda__title {
+		font-size: 40px;
+	}
+
+	.demo-agenda__step {
+		flex-direction: column;
+		gap: 16px;
+		padding: 28px 8px;
+	}
+
+	.demo-agenda__step-meta {
+		flex-direction: row;
+		width: auto;
+		align-items: baseline;
+		gap: 12px;
+	}
+
+	.demo-agenda__step-title {
+		font-size: 22px;
+	}
+
+	.demo-team {
+		padding: 64px 20px;
+		gap: 32px;
+	}
+
+	.demo-team__head {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+	}
+
+	.demo-team__title {
+		font-size: 36px;
+	}
+
+	.demo-team__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.demo-member {
+		padding: 28px 24px;
+		gap: 20px;
+	}
+
+	.demo-member__avatar {
+		width: 72px;
+		height: 72px;
+		font-size: 24px;
+	}
+
+	.demo-alt {
+		padding: 48px 20px 64px;
+		gap: 28px;
+	}
+
+	.demo-alt__title {
+		font-size: 32px;
+	}
+
+	.demo-alt__grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* ---------- AUTH SCREENS (demo-hero scheduler is reused) ---------- */
+
 	/* ---------- FOOTER ---------- */
 	.footer {
 		padding: 48px 20px 32px;
@@ -436,12 +913,29 @@
 	}
 
 	.footer__grid {
-		flex-direction: column;
-		gap: 32px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 24px 32px;
 	}
 
 	.footer__brand {
+		grid-column: 1 / -1;
 		max-width: none;
+		margin-bottom: 8px;
+	}
+
+	.footer__col .footer__links {
+		gap: 8px;
+	}
+
+	.footer__col .footer__link {
+		font-size: 14px;
+	}
+
+	/* Hide "For clubs" and "Resources" columns on mobile — matches Paper 2-col layout */
+	.footer__col:nth-of-type(2),
+	.footer__col:nth-of-type(4) {
+		display: none;
 	}
 
 	.footer__legal {
