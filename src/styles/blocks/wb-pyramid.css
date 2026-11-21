@@ -270,3 +270,77 @@
 .wb-pyr__blk--ai .wb-pyr__blk-sub {
 	color: var(--color-feature-violet);
 }
+
+/* ---------- Mobile ---------- */
+
+@media (width <= 768px) {
+	.wb-pyr {
+		padding: 80px 20px;
+		gap: 48px;
+	}
+
+	.wb-pyr__title {
+		font-size: 44px;
+		line-height: 100%;
+	}
+
+	.wb-pyr__body {
+		font-size: 15px;
+		line-height: 150%;
+	}
+
+	.wb-pyr__stack {
+		gap: 10px;
+	}
+
+	.wb-pyr__row {
+		gap: 10px;
+	}
+
+	.wb-pyr__capstone {
+		width: 100%;
+		max-width: 320px;
+	}
+
+	.wb-pyr__blk {
+		width: calc(50% - 5px);
+		min-width: 0;
+		padding: 12px 14px;
+		gap: 10px;
+	}
+
+	.wb-pyr__blk-icon {
+		width: 32px;
+		height: 32px;
+		border-radius: 8px;
+	}
+
+	.wb-pyr__blk-name {
+		font-size: 13px;
+	}
+
+	.wb-pyr__blk-sub {
+		font-size: 9px;
+		letter-spacing: 0.06em;
+	}
+}
+
+/* ---------- Tablet ---------- */
+
+@media (width <= 1024px) and (width >= 769px) {
+	.wb-pyr {
+		padding: 96px 32px;
+	}
+
+	.wb-pyr__title {
+		font-size: 56px;
+	}
+
+	.wb-pyr__blk {
+		width: 240px;
+	}
+
+	.wb-pyr__capstone {
+		width: 320px;
+	}
+}

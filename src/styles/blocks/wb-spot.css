@@ -2,13 +2,20 @@
 	width: 100%;
 	padding: 120px 72px;
 	display: flex;
+	justify-content: center;
+	background: var(--color-ink);
+	color: #fff;
+	overflow: hidden;
+}
+
+.wb-spot__inner {
+	width: 100%;
+	max-width: 1296px;
+	display: flex;
 	flex-direction: row;
 	align-items: flex-start;
 	justify-content: space-between;
 	gap: 80px;
-	background: var(--color-ink);
-	color: #fff;
-	overflow: hidden;
 }
 
 .wb-spot__lead {
@@ -652,4 +659,185 @@
 	line-height: 100%;
 	color: var(--color-ink);
 	flex-shrink: 0;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (width <= 768px) {
+	.wb-spot {
+		padding: 72px 20px;
+	}
+
+	.wb-spot__inner {
+		flex-direction: column;
+		gap: 48px;
+	}
+
+	.wb-spot__lead {
+		max-width: none;
+		padding-top: 0;
+		gap: 20px;
+	}
+
+	.wb-spot__title {
+		font-size: 56px;
+		line-height: 100%;
+	}
+
+	.wb-spot__body {
+		font-size: 16px;
+		line-height: 150%;
+	}
+
+	.wb-spot__actions {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.wb-spot__preview {
+		width: 100%;
+	}
+
+	/* Builder card compacted */
+	.wb-spot__url {
+		display: none;
+	}
+
+	.wb-spot__body-row {
+		min-height: 0;
+	}
+
+	.wb-spot__pages {
+		display: none;
+	}
+
+	.wb-spot__canvas {
+		padding: 12px;
+		gap: 6px;
+	}
+
+	.wb-spot__blk {
+		padding: 10px 12px;
+		gap: 6px;
+	}
+
+	.wb-spot__blk-copy {
+		font-size: 15px;
+		line-height: 115%;
+	}
+
+	.wb-spot__blk-label {
+		font-size: 8px;
+		letter-spacing: 0.1em;
+	}
+
+	/* Pick a block card compacted */
+	.wb-spot__pick {
+		padding: 18px;
+		gap: 14px;
+	}
+
+	.wb-spot__pick-grid {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 6px;
+	}
+
+	.wb-spot__thumb {
+		padding: 8px;
+		gap: 6px;
+	}
+
+	.wb-spot__thumb-prev {
+		height: 40px;
+		padding: 6px;
+	}
+
+	.wb-spot__thumb-name {
+		font-size: 10px;
+	}
+
+	.wb-spot__thumb-desc {
+		font-size: 9px;
+	}
+
+	.wb-spot__ai {
+		gap: 8px;
+		padding: 10px 12px;
+	}
+
+	.wb-spot__ai-icon {
+		width: 24px;
+		height: 24px;
+		border-radius: 6px;
+	}
+
+	.wb-spot__ai-k {
+		font-size: 9px;
+	}
+
+	.wb-spot__ai-q {
+		font-size: 11px;
+	}
+
+	.wb-spot__ai-go {
+		height: 26px;
+		padding: 0 10px;
+		font-size: 10px;
+	}
+}
+
+/* ---------- Tablet ---------- */
+
+@media (width <= 1024px) and (width >= 769px) {
+	.wb-spot {
+		padding: 96px 40px;
+	}
+
+	.wb-spot__inner {
+		flex-direction: column;
+		gap: 56px;
+	}
+
+	.wb-spot__lead {
+		max-width: none;
+		padding-top: 0;
+		gap: 24px;
+	}
+
+	.wb-spot__title {
+		font-size: 72px;
+	}
+
+	.wb-spot__body {
+		font-size: 16px;
+	}
+
+	.wb-spot__preview {
+		width: 100%;
+		max-width: 620px;
+		align-self: center;
+	}
+}
+
+/* Narrow phones — tighten further */
+
+@media (width <= 480px) {
+	.wb-spot {
+		padding: 56px 20px;
+		gap: 40px;
+	}
+
+	.wb-spot__title {
+		font-size: 44px;
+	}
+
+	.wb-spot__pick-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.wb-spot__pick-grid > :nth-child(3) {
+		grid-column: 1 / -1;
+	}
 }
