@@ -1,0 +1,272 @@
+.wb-pyr {
+	width: 100%;
+	padding: 128px 72px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 72px;
+	background: var(--color-background);
+}
+
+.wb-pyr__head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 24px;
+	max-width: 820px;
+	text-align: center;
+}
+
+.wb-pyr__eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 7px 14px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-hairline);
+	border-radius: var(--radius-pill);
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: var(--tracking-caps);
+	line-height: 100%;
+	text-transform: uppercase;
+	color: var(--color-primary);
+}
+
+.wb-pyr__eyebrow-dot {
+	width: 5px;
+	height: 5px;
+	border-radius: var(--radius-pill);
+	background: var(--color-primary);
+}
+
+.wb-pyr__title {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: 72px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: var(--tracking-tight);
+	line-height: 95%;
+	color: var(--color-ink);
+}
+
+.wb-pyr__title-accent {
+	color: var(--color-primary);
+}
+
+.wb-pyr__body {
+	margin: 0;
+	max-width: 640px;
+	font-family: var(--font-body);
+	font-size: 18px;
+	line-height: 160%;
+	color: var(--color-ink-muted);
+}
+
+/* ---------- Stack ---------- */
+
+.wb-pyr__stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	width: 100%;
+	max-width: 1296px;
+}
+
+.wb-pyr__row {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+/* ---------- Capstone (top) ---------- */
+
+.wb-pyr__capstone {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	width: 360px;
+	padding: 16px 20px;
+	background: var(--color-ink);
+	border-radius: 16px;
+	box-shadow:
+		0 30px 60px -20px color-mix(in srgb, var(--color-primary) 45%, transparent),
+		0 0 0 1.5px var(--color-primary);
+}
+
+.wb-pyr__capstone-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	background: var(--color-primary);
+	border-radius: 10px;
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.wb-pyr__capstone-text {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	flex: 1;
+}
+
+.wb-pyr__capstone-head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.wb-pyr__capstone-name {
+	font-family: var(--font-display);
+	font-size: 17px;
+	font-weight: var(--font-weight-semibold);
+	line-height: 100%;
+	color: #fff;
+}
+
+.wb-pyr__capstone-live {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 2px 7px;
+	background: color-mix(in srgb, var(--color-feature-mint) 20%, transparent);
+	border-radius: var(--radius-pill);
+	font-family: var(--font-mono);
+	font-size: 9px;
+	font-weight: var(--font-weight-bold);
+	letter-spacing: 0.1em;
+	line-height: 100%;
+	text-transform: uppercase;
+	color: var(--color-feature-mint);
+}
+
+.wb-pyr__capstone-live-dot {
+	width: 4px;
+	height: 4px;
+	border-radius: var(--radius-pill);
+	background: var(--color-feature-mint);
+}
+
+.wb-pyr__capstone-url {
+	font-family: var(--font-body);
+	font-size: 12px;
+	line-height: 100%;
+	color: rgb(255 255 255 / 60%);
+}
+
+/* ---------- Block cards ---------- */
+
+.wb-pyr__blk {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: 280px;
+	padding: 14px 16px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 14px;
+	box-shadow: 0 4px 12px -4px rgb(10 10 11 / 8%);
+}
+
+.wb-pyr__blk--ai {
+	border: 1.5px dashed var(--color-feature-violet);
+	box-shadow: none;
+}
+
+.wb-pyr__blk-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 9px;
+	color: #fff;
+	flex-shrink: 0;
+}
+
+.wb-pyr__blk--primary .wb-pyr__blk-icon {
+	background: var(--color-primary);
+}
+
+.wb-pyr__blk--ochre .wb-pyr__blk-icon {
+	background: var(--color-accent-ochre);
+}
+
+.wb-pyr__blk--mint .wb-pyr__blk-icon {
+	background: var(--color-feature-mint);
+}
+
+.wb-pyr__blk--ai .wb-pyr__blk-icon {
+	background: var(--color-feature-violet);
+}
+
+.wb-pyr__blk--sky .wb-pyr__blk-icon {
+	background: var(--color-sky-2);
+	color: var(--color-ink);
+}
+
+.wb-pyr__blk--sky3 .wb-pyr__blk-icon {
+	background: var(--color-sky-3);
+	color: var(--color-ink);
+}
+
+.wb-pyr__blk--violet .wb-pyr__blk-icon {
+	background: var(--color-feature-violet);
+}
+
+.wb-pyr__blk--graphite .wb-pyr__blk-icon {
+	background: var(--color-graphite);
+}
+
+.wb-pyr__blk--primary-strong .wb-pyr__blk-icon {
+	background: var(--color-primary-strong);
+}
+
+.wb-pyr__blk-text {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	flex: 1;
+	min-width: 0;
+}
+
+.wb-pyr__blk-name {
+	font-family: var(--font-body);
+	font-size: 14px;
+	font-weight: var(--font-weight-semibold);
+	line-height: 100%;
+	color: var(--color-ink);
+}
+
+.wb-pyr__blk-sub {
+	font-family: var(--font-mono);
+	font-size: 10px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: 0.08em;
+	line-height: 100%;
+	text-transform: uppercase;
+	color: var(--color-ink-subtle);
+}
+
+.wb-pyr__blk--primary .wb-pyr__blk-sub--revenue {
+	color: var(--color-primary);
+}
+
+.wb-pyr__blk--ochre .wb-pyr__blk-sub--revenue {
+	color: var(--color-accent-ochre);
+}
+
+.wb-pyr__blk--mint .wb-pyr__blk-sub--revenue {
+	color: var(--color-feature-mint);
+}
+
+.wb-pyr__blk--ai .wb-pyr__blk-sub {
+	color: var(--color-feature-violet);
+}
