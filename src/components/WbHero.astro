@@ -1,5 +1,14 @@
 ---
-import BuilderEditor from "./BuilderEditor.astro";
+const pages = [
+	{ name: "Home", count: 6 },
+	{ name: "About", count: 3 },
+	{ name: "Venue hire", count: 4, active: true },
+	{ name: "Catering", count: 3 },
+	{ name: "Corporate", count: 2 },
+	{ name: "Membership", count: 5 },
+	{ name: "Tournaments", count: 2 },
+	{ name: "Honour board", count: 1 },
+];
 ---
 
 <section class="wb-hero">
@@ -13,8 +22,9 @@ import BuilderEditor from "./BuilderEditor.astro";
 			that <span class="wb-hero__headline-accent">pays rent.</span>
 		</h1>
 		<p class="wb-hero__body">
-			Drag the venue-hire wizard onto the ballroom page. Drop bistro bookings on the restaurant page. Attach your
-			membership form on /join. Publish. Every visitor is now a paying customer, not a Monday-morning callback.
+			Drag the venue-hire wizard onto the ballroom page. Drop catering packages on the enquiries page. Add a
+			corporate-events block on /corporate. Publish. Every visitor is now a paying customer, not a Monday-morning
+			callback.
 		</p>
 		<div class="wb-hero__actions">
 			<a href="https://app.torny.pro/" class="btn btn--dark">Try it free</a>
@@ -22,7 +32,133 @@ import BuilderEditor from "./BuilderEditor.astro";
 		</div>
 	</div>
 
-	<div class="wb-hero__frame">
-		<BuilderEditor />
+	<div class="wb-hero__frame" aria-label="Live builder preview">
+		<div class="wb-hero-builder">
+			<div class="wb-hero-builder__chrome">
+				<div class="wb-hero-builder__chrome-left">
+					<div class="wb-hero-builder__dots" aria-hidden="true">
+						<span></span><span></span><span></span>
+					</div>
+					<div class="wb-hero-builder__url">
+						<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+							<rect x="1.5" y="3" width="7" height="5.5" rx="0.8" fill="none" stroke="currentColor" stroke-width="1.1"></rect>
+							<path d="M3 3V2a2 2 0 1 1 4 0v1" fill="none" stroke="currentColor" stroke-width="1.1"></path>
+						</svg>
+						<span>thorndonclub.co.nz / venue-hire</span>
+					</div>
+				</div>
+				<div class="wb-hero-builder__chrome-right">
+					<span class="wb-hero-builder__pub">
+						<span class="wb-hero-builder__pub-dot" aria-hidden="true"></span>
+						Published
+					</span>
+					<span class="wb-hero-builder__publish">Publish</span>
+				</div>
+			</div>
+
+			<div class="wb-hero-builder__body">
+				<aside class="wb-hero-builder__pages">
+					<div class="wb-hero-builder__tabs">
+						<span class="wb-hero-builder__tab wb-hero-builder__tab--on">Pages</span>
+						<span class="wb-hero-builder__tab">Settings</span>
+					</div>
+					<span class="wb-hero-builder__pages-label">Pages</span>
+					<ul class="wb-hero-builder__pages-list">
+						{
+							pages.map((p) => (
+								<li class={`wb-hero-builder__pages-item ${p.active ? "wb-hero-builder__pages-item--on" : ""}`}>
+									<span>{p.name}</span>
+									<span class="wb-hero-builder__pages-count">{p.count}</span>
+								</li>
+							))
+						}
+					</ul>
+					<span class="wb-hero-builder__pages-new">
+						<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+							<path d="M5 2v6M2 5h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+						</svg>
+						New page
+					</span>
+				</aside>
+
+				<div class="wb-hero-builder__canvas">
+					<div class="wb-hero-builder__meta">
+						<span class="wb-hero-builder__meta-k">Meta title &amp; description</span>
+						<span class="wb-hero-builder__meta-v">Falls back to the site default on save</span>
+					</div>
+					<article class="wb-hero-builder__blk">
+						<span class="wb-hero-builder__blk-label">Full-bleed video / image</span>
+						<p class="wb-hero-builder__blk-copy">The Hutt's home for play, food &amp; sport.</p>
+					</article>
+					<div class="wb-hero-builder__slot">+ Add block</div>
+					<article class="wb-hero-builder__blk wb-hero-builder__blk--on">
+						<div class="wb-hero-builder__blk-head">
+							<span class="wb-hero-builder__blk-label wb-hero-builder__blk-label--on">Venue-hire wizard</span>
+							<span class="wb-hero-builder__blk-state">Editing</span>
+						</div>
+						<p class="wb-hero-builder__blk-copy">Check your date — 3-step booking with Stripe deposit.</p>
+					</article>
+					<div class="wb-hero-builder__slot">+ Add block</div>
+					<article class="wb-hero-builder__blk">
+						<span class="wb-hero-builder__blk-label">Catering packages</span>
+						<p class="wb-hero-builder__blk-copy">Pick your package — per-guest priced.</p>
+					</article>
+					<div class="wb-hero-builder__slot">+ Add block</div>
+					<article class="wb-hero-builder__blk">
+						<span class="wb-hero-builder__blk-label">Corporate events</span>
+						<p class="wb-hero-builder__blk-copy">Enquiry form with brief + head-count.</p>
+					</article>
+					<div class="wb-hero-builder__slot wb-hero-builder__slot--on">+ Add block</div>
+				</div>
+
+				<aside class="wb-hero-builder__insp">
+					<div class="wb-hero-builder__insp-head">
+						<span class="wb-hero-builder__insp-label">Editing</span>
+						<span class="wb-hero-builder__insp-reset">Reset</span>
+					</div>
+					<span class="wb-hero-builder__insp-title">Venue-hire wizard</span>
+
+					<div class="wb-hero-builder__insp-field">
+						<span class="wb-hero-builder__insp-k">Headline</span>
+						<div class="wb-hero-builder__insp-input">Check your date</div>
+					</div>
+
+					<div class="wb-hero-builder__insp-field">
+						<span class="wb-hero-builder__insp-k">Steps</span>
+						<div class="wb-hero-builder__insp-seg">
+							<span class="wb-hero-builder__insp-seg-item">2</span>
+							<span class="wb-hero-builder__insp-seg-item wb-hero-builder__insp-seg-item--on">3</span>
+							<span class="wb-hero-builder__insp-seg-item">4</span>
+						</div>
+					</div>
+
+					<div class="wb-hero-builder__insp-field">
+						<span class="wb-hero-builder__insp-k">Deposit</span>
+						<div class="wb-hero-builder__insp-stack">
+							<div class="wb-hero-builder__insp-row">
+								<span>Hold %</span>
+								<span class="wb-hero-builder__insp-v">20%</span>
+							</div>
+							<div class="wb-hero-builder__insp-row">
+								<span>Processor</span>
+								<span class="wb-hero-builder__insp-v">Stripe</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="wb-hero-builder__insp-field wb-hero-builder__insp-field--div">
+						<span class="wb-hero-builder__insp-k">Wires to</span>
+						<span class="wb-hero-builder__insp-wire">
+							<span class="wb-hero-builder__insp-wire-dot" aria-hidden="true"></span>
+							Bookings board
+						</span>
+						<span class="wb-hero-builder__insp-wire">
+							<span class="wb-hero-builder__insp-wire-dot" aria-hidden="true"></span>
+							Xero · nightly
+						</span>
+					</div>
+				</aside>
+			</div>
+		</div>
 	</div>
 </section>

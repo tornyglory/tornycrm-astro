@@ -3,27 +3,7 @@ import Nav from "./Nav.astro";
 ---
 
 <section class="hero">
-	<video
-		class="hero__video"
-		autoplay
-		loop
-		muted
-		playsinline
-		preload="auto"
-		aria-hidden="true"
-	>
-		<source src="/hero.mp4" type="video/mp4" />
-	</video>
 	<div class="hero__bg" aria-hidden="true"></div>
-
-	<button type="button" class="hero__play-chip" aria-label="Watch Thorndon Club story">
-		<span class="hero__play-chip-icon" aria-hidden="true">
-			<svg width="9" height="10" viewBox="0 0 9 10" xmlns="http://www.w3.org/2000/svg">
-				<path d="M0 0.5v9l9-4.5-9-4.5z" fill="currentColor"></path>
-			</svg>
-		</span>
-		Watch · Royal Wgtn in 90s
-	</button>
 
 	<div class="hero__inner">
 		<Nav variant="on-dark" />
@@ -40,8 +20,8 @@ import Nav from "./Nav.astro";
 			</h1>
 
 			<p class="hero__subtitle">
-				Your clubrooms are a six-figure asset. Torny OS turns them into one — leasing your venue, filling your bistro,
-				selling memberships and reconciling every dollar back to Xero.
+				Your clubrooms are a six-figure asset. Torny turns them into one — leasing your venue, handling catering
+				packages, running corporate events and reconciling every dollar back to Xero.
 			</p>
 
 			<div class="hero__actions">
@@ -73,9 +53,9 @@ import Nav from "./Nav.astro";
 				<span class="hero__card-stat-delta">+42% vs last wk</span>
 			</div>
 			<div class="hero__card-stat">
-				<span class="hero__card-stat-label">Bistro covers</span>
-				<span class="hero__card-stat-value">286</span>
-				<span class="hero__card-stat-delta">Fri &amp; Sat full</span>
+				<span class="hero__card-stat-label">Catering packages</span>
+				<span class="hero__card-stat-value">14</span>
+				<span class="hero__card-stat-delta">8 corporate · 6 private</span>
 			</div>
 		</div>
 

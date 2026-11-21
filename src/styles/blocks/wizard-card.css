@@ -3,176 +3,547 @@
 	width: 560px;
 	display: flex;
 	flex-direction: column;
-	gap: 22px;
+	gap: 16px;
+}
+
+.wizard-card__chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	align-self: flex-start;
+	padding: 6px 12px;
+	background: color-mix(in srgb, var(--color-feature-violet) 12%, transparent);
+	border: 1px solid color-mix(in srgb, var(--color-feature-violet) 30%, transparent);
+	border-radius: var(--radius-pill);
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: var(--tracking-caps);
+	line-height: 100%;
+	text-transform: uppercase;
+	color: var(--color-feature-violet);
+}
+
+.wizard-card__chip-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: var(--radius-pill);
+	background: var(--color-feature-violet);
+}
+
+/* ---------- Form card ---------- */
+
+.wizard-card__form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
 	padding: 28px;
 	background: var(--color-surface);
-	border-radius: 24px;
-	box-shadow: 0 40px 80px -20px rgb(0 0 0 / 50%);
+	border: 1px solid var(--color-border);
+	border-radius: 16px;
+	box-shadow: 0 30px 60px -30px rgb(10 10 11 / 20%);
 }
 
-.wizard-card__head {
+.wizard-card__form-head {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
+	gap: 16px;
 }
 
-.wizard-card__title {
-	font-family: var(--font-display);
-	font-size: 20px;
-	font-weight: var(--font-weight-semibold);
-	letter-spacing: -0.015em;
-	line-height: 24px;
-	color: var(--color-ink);
+.wizard-card__form-head-text {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 
 .wizard-card__step {
 	font-family: var(--font-mono);
 	font-size: 11px;
-	letter-spacing: 0.1em;
-	line-height: 14px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: var(--tracking-caps);
+	line-height: 100%;
 	text-transform: uppercase;
 	color: var(--color-ink-subtle);
+}
+
+.wizard-card__headline {
+	font-family: var(--font-display);
+	font-size: 36px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: -0.025em;
+	line-height: 100%;
+	color: var(--color-ink);
 }
 
 .wizard-card__progress {
 	display: flex;
-	align-items: center;
-	gap: 8px;
+	gap: 3px;
+	padding-top: 6px;
 }
 
 .wizard-card__progress-step {
-	flex: 1 1 0;
+	width: 16px;
 	height: 4px;
-	border-radius: var(--radius-pill);
-	background: var(--color-hairline);
+	border-radius: 2px;
+	background: var(--color-border);
 }
 
 .wizard-card__progress-step--done {
-	background: var(--color-primary);
+	background: var(--color-ink);
 }
 
-.wizard-card__picker {
+/* ---------- Sections ---------- */
+
+.wizard-card__section {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 14px;
 }
 
-.wizard-card__picker-label {
+.wizard-card__section--div {
+	padding-top: 18px;
+	border-top: 1px solid var(--color-border);
+}
+
+.wizard-card__section-head {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.wizard-card__section-n {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	background: var(--color-ink);
+	border-radius: 6px;
 	font-family: var(--font-mono);
-	font-size: 11px;
+	font-size: 10px;
+	font-weight: var(--font-weight-bold);
+	color: #fff;
+	line-height: 100%;
+}
+
+.wizard-card__section-title {
+	font-family: var(--font-display);
+	font-size: 17px;
 	font-weight: var(--font-weight-semibold);
-	letter-spacing: 0.1em;
-	line-height: 14px;
+	line-height: 100%;
+	color: var(--color-ink);
+}
+
+/* ---------- Fields ---------- */
+
+.wizard-card__field {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.wizard-card__field--grow {
+	flex: 1.4;
+}
+
+.wizard-card__row {
+	display: flex;
+	gap: 10px;
+}
+
+.wizard-card__row .wizard-card__field:first-child {
+	flex: 1;
+}
+
+.wizard-card__label {
+	font-family: var(--font-mono);
+	font-size: 10px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: var(--tracking-caps);
+	line-height: 100%;
 	text-transform: uppercase;
 	color: var(--color-ink-subtle);
 }
 
-.wizard-card__option {
+.wizard-card__chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+
+.wizard-card__pill {
+	display: inline-flex;
+	align-items: center;
+	height: 30px;
+	padding: 0 14px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-pill);
+	font-family: var(--font-body);
+	font-size: 13px;
+	font-weight: var(--font-weight-medium);
+	line-height: 100%;
+	color: var(--color-ink-muted);
+}
+
+.wizard-card__pill--on {
+	background: var(--color-ink);
+	border-color: var(--color-ink);
+	color: #fff;
+	font-weight: var(--font-weight-semibold);
+}
+
+.wizard-card__stepper {
+	display: flex;
+	align-items: stretch;
+	height: 42px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.wizard-card__stepper-btn {
 	display: flex;
 	align-items: center;
-	gap: 16px;
-	padding: 16px;
+	justify-content: center;
+	width: 36px;
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 100%;
+	color: var(--color-ink-subtle);
+}
+
+.wizard-card__stepper-btn:first-child {
+	border-right: 1px solid var(--color-border);
+}
+
+.wizard-card__stepper-btn:last-child {
+	border-left: 1px solid var(--color-border);
+}
+
+.wizard-card__stepper-val {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-display);
+	font-size: 16px;
+	font-weight: var(--font-weight-semibold);
+	line-height: 100%;
+	color: var(--color-ink);
+}
+
+.wizard-card__select {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 42px;
+	padding: 0 14px;
 	background: var(--color-surface);
-	border: 1px solid var(--color-hairline);
-	border-radius: 14px;
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	font-family: var(--font-body);
+	font-size: 13px;
+	font-weight: var(--font-weight-medium);
+	line-height: 100%;
+	color: var(--color-ink);
 }
 
-.wizard-card__option--selected {
-	background: var(--color-accent-soft);
-	border: 2px solid var(--color-primary);
+.wizard-card__select svg {
+	color: var(--color-ink-subtle);
 }
 
-.wizard-card__option-radio {
-	width: 40px;
-	height: 40px;
-	border-radius: var(--radius-pill);
-	border: 1.5px solid var(--color-hairline);
+/* ---------- Add-ons ---------- */
+
+.wizard-card__addon {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 12px 14px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 10px;
+}
+
+.wizard-card__addon--on {
+	background: color-mix(in srgb, var(--color-primary) 5%, var(--color-surface));
+	border-color: color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+.wizard-card__check {
 	flex-shrink: 0;
+	width: 18px;
+	height: 18px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 4px;
 }
 
-.wizard-card__option-radio--active {
+.wizard-card__check--on {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	background: var(--color-primary);
-	border: 0;
+	border-color: var(--color-primary);
 	color: #fff;
 }
 
-.wizard-card__option-body {
-	flex: 1 1 0;
+.wizard-card__addon-body {
+	flex: 1;
 	display: flex;
 	flex-direction: column;
 	gap: 2px;
+	min-width: 0;
 }
 
-.wizard-card__option-title {
-	font-family: var(--font-display);
-	font-size: 16px;
+.wizard-card__addon-title {
+	font-family: var(--font-body);
+	font-size: 14px;
 	font-weight: var(--font-weight-semibold);
-	line-height: 20px;
+	line-height: 100%;
 	color: var(--color-ink);
 }
 
-.wizard-card__option-sub {
+.wizard-card__addon-sub {
 	font-family: var(--font-body);
 	font-size: 12px;
-	line-height: 16px;
+	line-height: 100%;
 	color: var(--color-ink-subtle);
 }
 
-.wizard-card__option-price {
-	font-family: var(--font-mono);
-	font-size: 14px;
-	font-weight: var(--font-weight-bold);
-	line-height: 18px;
-	color: var(--color-ink);
-}
-
-.wizard-card__option--selected .wizard-card__option-price {
-	color: var(--color-primary-strong);
-}
-
-.wizard-card__footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-top: 16px;
-	border-top: 1px solid var(--color-hairline);
-}
-
-.wizard-card__total {
-	display: flex;
-	flex-direction: column;
-	gap: 2px;
-}
-
-.wizard-card__total-meta {
-	font-family: var(--font-mono);
-	font-size: 10px;
-	letter-spacing: 0.1em;
-	line-height: 12px;
-	text-transform: uppercase;
-	color: var(--color-ink-subtle);
-}
-
-.wizard-card__total-value {
-	font-family: var(--font-display);
-	font-size: 20px;
-	font-weight: var(--font-weight-bold);
-	letter-spacing: -0.015em;
-	line-height: 24px;
-	color: var(--color-ink);
-}
-
-.wizard-card__total-value-sub {
-	font-size: 12px;
-	font-weight: var(--font-weight-regular);
-	line-height: 16px;
-}
-
-.wizard-card__actions {
+.wizard-card__addon-right {
 	display: flex;
 	align-items: center;
 	gap: 10px;
+	flex-shrink: 0;
+}
+
+.wizard-card__addon-price {
+	font-family: var(--font-display);
+	font-size: 16px;
+	font-weight: var(--font-weight-semibold);
+	line-height: 100%;
+	color: var(--color-ink);
+	flex-shrink: 0;
+}
+
+.wizard-card__addon-per {
+	font-family: var(--font-mono);
+	font-size: 10px;
+	line-height: 100%;
+	color: var(--color-ink-subtle);
+}
+
+.wizard-card__count {
+	display: flex;
+	align-items: center;
+	height: 26px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 6px;
+	overflow: hidden;
+	font-family: var(--font-body);
+	font-size: 13px;
+	line-height: 100%;
+}
+
+.wizard-card__count > span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	color: var(--color-ink-subtle);
+}
+
+.wizard-card__count-val {
+	width: 24px !important;
+	color: var(--color-ink) !important;
+	font-weight: var(--font-weight-semibold);
+	border-left: 1px solid var(--color-border);
+	border-right: 1px solid var(--color-border);
+}
+
+/* ---------- Dark summary ---------- */
+
+.wizard-card__summary {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 24px 28px;
+	background: var(--color-ink);
+	border-radius: 16px;
+	box-shadow: 0 30px 60px -30px rgb(10 10 11 / 40%);
+	color: #fff;
+}
+
+.wizard-card__summary-head {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: var(--tracking-caps);
+	line-height: 100%;
+	text-transform: uppercase;
+	color: rgb(255 255 255 / 50%);
+}
+
+.wizard-card__summary-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: var(--radius-pill);
+	background: var(--color-feature-mint);
+}
+
+.wizard-card__summary-event {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.wizard-card__summary-title {
+	font-family: var(--font-display);
+	font-size: 26px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: -0.02em;
+	line-height: 100%;
+	color: #fff;
+}
+
+.wizard-card__summary-meta {
+	font-family: var(--font-body);
+	font-size: 13px;
+	line-height: 140%;
+	color: rgb(255 255 255 / 55%);
+}
+
+.wizard-card__summary-lines {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.wizard-card__summary-line {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-family: var(--font-body);
+	font-size: 13px;
+	line-height: 100%;
+	color: rgb(255 255 255 / 75%);
+}
+
+.wizard-card__summary-line span:last-child {
+	font-family: var(--font-mono);
+	font-weight: var(--font-weight-medium);
+	color: rgb(255 255 255 / 85%);
+}
+
+.wizard-card__summary-line--muted {
+	color: rgb(255 255 255 / 55%);
+}
+
+.wizard-card__summary-line--muted span:last-child {
+	color: rgb(255 255 255 / 65%);
+}
+
+.wizard-card__summary-due {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 12px;
+	padding-top: 16px;
+	border-top: 1px solid rgb(255 255 255 / 8%);
+}
+
+.wizard-card__summary-due-left {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.wizard-card__summary-due-k {
+	font-family: var(--font-mono);
+	font-size: 10px;
+	font-weight: var(--font-weight-semibold);
+	letter-spacing: var(--tracking-caps);
+	line-height: 100%;
+	text-transform: uppercase;
+	color: rgb(255 255 255 / 50%);
+}
+
+.wizard-card__summary-due-sub {
+	font-family: var(--font-body);
+	font-size: 12px;
+	line-height: 100%;
+	color: rgb(255 255 255 / 50%);
+}
+
+.wizard-card__summary-due-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 2px;
+}
+
+.wizard-card__summary-due-v {
+	font-family: var(--font-display);
+	font-size: 42px;
+	font-weight: var(--font-weight-medium);
+	letter-spacing: -0.025em;
+	line-height: 95%;
+	color: #fff;
+}
+
+.wizard-card__summary-due-total {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	line-height: 100%;
+	color: rgb(255 255 255 / 45%);
+}
+
+.wizard-card__summary-foot {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.wizard-card__summary-cancel {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-family: var(--font-body);
+	font-size: 12px;
+	line-height: 100%;
+	color: rgb(255 255 255 / 60%);
+}
+
+.wizard-card__summary-cancel svg {
+	color: rgb(255 255 255 / 60%);
+	flex-shrink: 0;
+}
+
+.wizard-card__summary-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	height: 36px;
+	padding: 0 16px;
+	background: #fff;
+	border-radius: 10px;
+	font-family: var(--font-body);
+	font-size: 13px;
+	font-weight: var(--font-weight-semibold);
+	line-height: 100%;
+	color: var(--color-ink);
+	text-decoration: none;
+}
+
+.wizard-card__summary-cta span {
+	font-family: var(--font-mono);
+	color: var(--color-ink-subtle);
 }

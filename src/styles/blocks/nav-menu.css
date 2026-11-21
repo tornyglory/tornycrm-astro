@@ -149,10 +149,6 @@
 	color: #fff;
 }
 
-.nav-menu__head .nav__wordmark-tag {
-	color: rgb(255 255 255 / 55%);
-}
-
 .nav-menu__close {
 	display: inline-flex;
 	align-items: center;

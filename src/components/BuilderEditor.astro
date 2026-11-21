@@ -26,13 +26,26 @@
 		<div class="builder-spot__block builder-spot__block--active">
 			<span class="builder-spot__block-icon" aria-hidden="true">
 				<svg width="16" height="16" viewBox="0 0 16 16">
-					<circle cx="8" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
-					<circle cx="8" cy="8" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+					<path d="M3 5h10M4 5v8M12 5v8M4 13h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+					<path d="M6 2v3M10 2v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
 				</svg>
 			</span>
 			<div class="builder-spot__block-body">
-				<div class="builder-spot__block-name">Bistro bookings</div>
-				<div class="builder-spot__block-status">On · Restaurant page</div>
+				<div class="builder-spot__block-name">Catering packages</div>
+				<div class="builder-spot__block-status">On · Venue hire page</div>
+			</div>
+		</div>
+
+		<div class="builder-spot__block builder-spot__block--active">
+			<span class="builder-spot__block-icon" aria-hidden="true">
+				<svg width="16" height="16" viewBox="0 0 16 16">
+					<rect x="2.5" y="4" width="11" height="9" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.6"></rect>
+					<path d="M2.5 7h11M6 4V2M10 4V2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+				</svg>
+			</span>
+			<div class="builder-spot__block-body">
+				<div class="builder-spot__block-name">Corporate events</div>
+				<div class="builder-spot__block-status">On · Corporate page</div>
 			</div>
 		</div>
 
@@ -101,7 +114,7 @@
 				<div class="builder-spot__hero-brand">Thorndon Club</div>
 				<div class="builder-spot__hero-nav">
 					<span class="builder-spot__hero-nav-link">Members</span>
-					<span class="builder-spot__hero-nav-link">Bistro</span>
+					<span class="builder-spot__hero-nav-link">Catering</span>
 					<span class="builder-spot__hero-nav-link">Venue hire</span>
 					<span class="builder-spot__hero-nav-link">Join</span>
 				</div>
@@ -142,28 +155,43 @@
 		</div>
 
 		<div class="builder-spot__block-panel builder-spot__block-panel--light">
-			<span class="builder-spot__block-tag" aria-hidden="true">Bistro bookings</span>
+			<span class="builder-spot__block-tag" aria-hidden="true">Catering packages</span>
 			<div class="builder-spot__panel-head">
 				<div>
-					<div class="builder-spot__panel-title">Book a table — Friday dinner</div>
-					<div class="builder-spot__panel-sub">6:30 or 8:00 sitting · members pay members' price</div>
+					<div class="builder-spot__panel-title">Pick your package</div>
+					<div class="builder-spot__panel-sub">Add it to any venue hire · auto-priced per guest</div>
 				</div>
-				<div class="builder-spot__panel-flag">Only 12 seats left</div>
+				<div class="builder-spot__panel-flag">3 to choose</div>
 			</div>
-			<div class="builder-spot__fields">
-				<div class="builder-spot__field builder-spot__field--selected">
-					<span class="builder-spot__field-label">Sitting</span>
-					<span class="builder-spot__field-value">6:30 pm</span>
+			<div class="builder-spot__packs">
+				<div class="builder-spot__pack builder-spot__pack--on">
+					<span class="builder-spot__pack-check" aria-hidden="true">
+						<svg width="10" height="10" viewBox="0 0 10 10">
+							<path d="M2 5l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+						</svg>
+					</span>
+					<div class="builder-spot__pack-body">
+						<span class="builder-spot__pack-title">Grazing + bar</span>
+						<span class="builder-spot__pack-sub">8 bites, 3 hr open bar, cheese board</span>
+					</div>
+					<span class="builder-spot__pack-price">$68 /pp</span>
 				</div>
-				<div class="builder-spot__field">
-					<span class="builder-spot__field-label">Party</span>
-					<span class="builder-spot__field-value">4 guests</span>
+				<div class="builder-spot__pack">
+					<span class="builder-spot__pack-check" aria-hidden="true"></span>
+					<div class="builder-spot__pack-body">
+						<span class="builder-spot__pack-title">Plated three course</span>
+						<span class="builder-spot__pack-sub">Choice of two mains, dessert, wine on tables</span>
+					</div>
+					<span class="builder-spot__pack-price">$95 /pp</span>
 				</div>
-				<div class="builder-spot__field">
-					<span class="builder-spot__field-label">Member #</span>
-					<span class="builder-spot__field-value">0842</span>
+				<div class="builder-spot__pack">
+					<span class="builder-spot__pack-check" aria-hidden="true"></span>
+					<div class="builder-spot__pack-body">
+						<span class="builder-spot__pack-title">Corporate lunch</span>
+						<span class="builder-spot__pack-sub">Working buffet, coffee station, AV included</span>
+					</div>
+					<span class="builder-spot__pack-price">$52 /pp</span>
 				</div>
-				<div class="builder-spot__field-cta builder-spot__field-cta--primary">Confirm table →</div>
 			</div>
 		</div>
 
@@ -182,7 +210,7 @@
 				</span>
 				<div class="builder-spot__footer-text">
 					<div class="builder-spot__footer-title">This page is making you $4,620 this week</div>
-					<div class="builder-spot__footer-meta">2 venue hires booked · 68 bistro covers · live</div>
+					<div class="builder-spot__footer-meta">2 venue hires booked · 6 catering packages sold · live</div>
 				</div>
 			</div>
 			<div class="builder-spot__footer-link">View in Analytics →</div>

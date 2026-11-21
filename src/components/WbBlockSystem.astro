@@ -1,0 +1,339 @@
+---
+const pages = [
+	{ name: "Home", count: 6, active: true },
+	{ name: "About", count: 3 },
+	{ name: "Venue hire", count: 4 },
+	{ name: "Tournaments", count: 2 },
+	{ name: "Membership", count: 5 },
+	{ name: "Honour board", count: 1 },
+];
+
+const chips = [
+	{ label: "All", active: true },
+	{ label: "Layout" },
+	{ label: "Media" },
+	{ label: "Bookings" },
+	{ label: "Tournaments" },
+	{ label: "Smart", smart: true },
+];
+---
+
+<section class="wb-bsys">
+	<header class="wb-bsys__head">
+		<div class="wb-bsys__head-lead">
+			<span class="wb-bsys__eyebrow">
+				<span class="wb-bsys__eyebrow-dot" aria-hidden="true"></span>
+				Dynamic block system
+			</span>
+			<h2 class="wb-bsys__title">
+				Pick a block. Move it. <span class="wb-bsys__title-accent">Make it yours.</span>
+			</h2>
+		</div>
+		<p class="wb-bsys__sub">
+			Build your site from predesigned block templates — venue hire, catering packages, corporate events, membership.
+			Drag them into order, swap the fonts and colour, or ask Torny AI to build a block that doesn't exist yet.
+		</p>
+	</header>
+
+	<div class="wb-bsys__canvas" aria-label="Website builder preview">
+		<div class="wb-bsys-chrome">
+			<div class="wb-bsys-chrome__left">
+				<div class="wb-bsys-chrome__dots" aria-hidden="true">
+					<span></span><span></span><span></span>
+				</div>
+				<div class="wb-bsys-chrome__url">
+					<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+						<rect x="1.5" y="3" width="7" height="5.5" rx="0.8" fill="none" stroke="currentColor" stroke-width="1.1"></rect>
+						<path d="M3 3V2a2 2 0 1 1 4 0v1" fill="none" stroke="currentColor" stroke-width="1.1"></path>
+					</svg>
+					<span>thorndonclub.co.nz / venue</span>
+				</div>
+			</div>
+			<div class="wb-bsys-chrome__right">
+				<span class="wb-bsys-chrome__pub">
+					<span class="wb-bsys-chrome__pub-dot" aria-hidden="true"></span>
+					Published
+				</span>
+				<span class="wb-bsys-chrome__cta">Publish</span>
+			</div>
+		</div>
+
+		<div class="wb-bsys-stage">
+			<div class="wb-bsys-builder" aria-hidden="true">
+				<aside class="wb-bsys-pages">
+					<div class="wb-bsys-pages__tabs">
+						<span class="wb-bsys-pages__tab wb-bsys-pages__tab--on">Pages</span>
+						<span class="wb-bsys-pages__tab">Settings</span>
+					</div>
+					<span class="wb-bsys-pages__label">Pages</span>
+					<ul class="wb-bsys-pages__list">
+						{
+							pages.map((p) => (
+								<li class={`wb-bsys-pages__item ${p.active ? "wb-bsys-pages__item--on" : ""}`}>
+									<span>{p.name}</span>
+									<span class="wb-bsys-pages__count">{p.count}</span>
+								</li>
+							))
+						}
+					</ul>
+					<span class="wb-bsys-pages__new">
+						<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+							<path d="M5 2v6M2 5h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+						</svg>
+						New page
+					</span>
+				</aside>
+
+				<div class="wb-bsys-canvas-col">
+					<article class="wb-bsys-blk">
+						<span class="wb-bsys-blk__label">Full-bleed video / image</span>
+						<p class="wb-bsys-blk__copy">The Hutt's home for play, food &amp; sport.</p>
+					</article>
+					<div class="wb-bsys-slot">+ Add block</div>
+					<article class="wb-bsys-blk wb-bsys-blk--on">
+						<div class="wb-bsys-blk__head">
+							<span class="wb-bsys-blk__label wb-bsys-blk__label--on">Venue-hire hero</span>
+							<span class="wb-bsys-blk__state">Editing</span>
+						</div>
+						<p class="wb-bsys-blk__copy">Have your next thing at your place.</p>
+					</article>
+					<div class="wb-bsys-slot">+ Add block</div>
+					<article class="wb-bsys-blk">
+						<span class="wb-bsys-blk__label">Media + text</span>
+						<p class="wb-bsys-blk__copy">Big screens, cold taps, proper food.</p>
+					</article>
+					<div class="wb-bsys-slot wb-bsys-slot--on">+ Add block</div>
+				</div>
+
+				<aside class="wb-bsys-insp">
+					<div class="wb-bsys-insp__head">
+						<span class="wb-bsys-insp__label">Editing</span>
+						<span class="wb-bsys-insp__reset">Reset</span>
+					</div>
+					<span class="wb-bsys-insp__title">Venue-hire hero</span>
+					<div class="wb-bsys-insp__field">
+						<span class="wb-bsys-insp__k">Layout</span>
+						<div class="wb-bsys-insp__seg">
+							<span class="wb-bsys-insp__seg-item">Left</span>
+							<span class="wb-bsys-insp__seg-item wb-bsys-insp__seg-item--on">Centered</span>
+						</div>
+					</div>
+					<div class="wb-bsys-insp__field">
+						<span class="wb-bsys-insp__k">Background</span>
+						<div class="wb-bsys-insp__bg">
+							<div class="wb-bsys-insp__bg-pill">
+								<svg width="8" height="8" viewBox="0 0 8 8" aria-hidden="true">
+									<path d="M3 2v4l3-2z" fill="currentColor"></path>
+								</svg>
+								0:12
+							</div>
+						</div>
+					</div>
+					<div class="wb-bsys-insp__field">
+						<span class="wb-bsys-insp__k">Primary CTA</span>
+						<div class="wb-bsys-insp__input">Book the venue →</div>
+					</div>
+					<div class="wb-bsys-insp__field wb-bsys-insp__field--div">
+						<span class="wb-bsys-insp__k">Wires to</span>
+						<span class="wb-bsys-insp__wire">
+							<span class="wb-bsys-insp__wire-dot" aria-hidden="true"></span>
+							Venue hire wizard
+						</span>
+						<span class="wb-bsys-insp__wire">
+							<span class="wb-bsys-insp__wire-dot" aria-hidden="true"></span>
+							Stripe deposits
+						</span>
+					</div>
+				</aside>
+			</div>
+
+			<div class="wb-bsys-modal-backdrop" aria-hidden="true"></div>
+
+			<div class="wb-bsys-modal" role="dialog" aria-label="Pick a block">
+				<div class="wb-bsys-modal__head">
+					<div class="wb-bsys-modal__head-text">
+						<span class="wb-bsys-modal__eyebrow">Add block</span>
+						<span class="wb-bsys-modal__title">Pick a block</span>
+					</div>
+					<span class="wb-bsys-modal__close" aria-hidden="true">
+						<svg width="12" height="12" viewBox="0 0 12 12">
+							<path d="M3 3l6 6M9 3l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+						</svg>
+					</span>
+				</div>
+
+				<div class="wb-bsys-modal__search">
+					<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true">
+						<circle cx="6" cy="6" r="4.5" fill="none" stroke="currentColor" stroke-width="1.4"></circle>
+						<path d="M9.5 9.5l3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+					</svg>
+					<span>Search blocks or describe what you want…</span>
+				</div>
+
+				<div class="wb-bsys-modal__chips">
+					{
+						chips.map((c) => (
+							<span class={`wb-bsys-chip ${c.active ? "wb-bsys-chip--on" : ""} ${c.smart ? "wb-bsys-chip--smart" : ""}`}>
+								{c.smart && (
+									<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+										<path d="M5 1l1.2 2.6L9 5l-2.8 1.4L5 9l-1.2-2.6L1 5l2.8-1.4z" fill="currentColor"></path>
+									</svg>
+								)}
+								{c.label}
+							</span>
+						))
+					}
+				</div>
+
+				<div class="wb-bsys-modal__grid">
+					<article class="wb-bsys-card">
+						<div class="wb-bsys-card__preview wb-bsys-card__preview--hero">
+							<div class="wb-bsys-prev-hero__text">
+								<span class="wb-bsys-prev-hero__h1"></span>
+								<span class="wb-bsys-prev-hero__p"></span>
+								<span class="wb-bsys-prev-hero__p wb-bsys-prev-hero__p--short"></span>
+								<div class="wb-bsys-prev-hero__ctas">
+									<span class="wb-bsys-prev-hero__cta wb-bsys-prev-hero__cta--fill"></span>
+									<span class="wb-bsys-prev-hero__cta wb-bsys-prev-hero__cta--line"></span>
+								</div>
+							</div>
+							<div class="wb-bsys-prev-hero__img" aria-hidden="true"></div>
+						</div>
+						<div class="wb-bsys-card__meta">
+							<span class="wb-bsys-card__name">Hero</span>
+							<span class="wb-bsys-card__desc">Big heading, tagline, two CTAs</span>
+						</div>
+					</article>
+
+					<article class="wb-bsys-card">
+						<div class="wb-bsys-card__preview wb-bsys-card__preview--whats">
+							{
+								["#2563EB", "#EA580C", "#16A34A", "#7C3AED"].map((c) => (
+									<div class="wb-bsys-prev-chip">
+										<span class="wb-bsys-prev-chip__dot" style={`background: ${c}`}></span>
+										<span class="wb-bsys-prev-chip__t"></span>
+										<span class="wb-bsys-prev-chip__t wb-bsys-prev-chip__t--short"></span>
+									</div>
+								))
+							}
+						</div>
+						<div class="wb-bsys-card__meta">
+							<span class="wb-bsys-card__name">What's on</span>
+							<span class="wb-bsys-card__desc">Event strip with filter chips</span>
+						</div>
+					</article>
+
+					<article class="wb-bsys-card">
+						<div class="wb-bsys-card__preview wb-bsys-card__preview--tourney">
+							<span class="wb-bsys-prev-tourney__live">Live</span>
+							<span class="wb-bsys-prev-tourney__title"></span>
+							<div class="wb-bsys-prev-tourney__meta">
+								<span></span><span></span>
+							</div>
+						</div>
+						<div class="wb-bsys-card__meta">
+							<span class="wb-bsys-card__name">Tournament · Hero</span>
+							<span class="wb-bsys-card__desc">Full-bleed feature of your next comp</span>
+						</div>
+					</article>
+
+					<article class="wb-bsys-card wb-bsys-card--on">
+						<div class="wb-bsys-card__preview wb-bsys-card__preview--venue">
+							<div class="wb-bsys-prev-venue__steps">
+								<span class="wb-bsys-prev-venue__step wb-bsys-prev-venue__step--on">1</span>
+								<span class="wb-bsys-prev-venue__rule"></span>
+								<span class="wb-bsys-prev-venue__step">2</span>
+								<span class="wb-bsys-prev-venue__rule"></span>
+								<span class="wb-bsys-prev-venue__step">3</span>
+							</div>
+							<div class="wb-bsys-prev-venue__panel">
+								<span class="wb-bsys-prev-venue__h"></span>
+								<div class="wb-bsys-prev-venue__opts">
+									<span></span><span></span><span class="wb-bsys-prev-venue__opt--on"></span>
+								</div>
+							</div>
+						</div>
+						<div class="wb-bsys-card__foot">
+							<div class="wb-bsys-card__meta">
+								<span class="wb-bsys-card__name">Venue hire wizard</span>
+								<span class="wb-bsys-card__desc">3-step quote with Stripe deposit</span>
+							</div>
+							<span class="wb-bsys-card__add" aria-hidden="true">
+								<svg width="12" height="12" viewBox="0 0 12 12">
+									<path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path>
+								</svg>
+							</span>
+						</div>
+					</article>
+				</div>
+
+				<div class="wb-bsys-modal__ai">
+					<span class="wb-bsys-modal__ai-icon" aria-hidden="true">
+						<svg width="14" height="14" viewBox="0 0 14 14">
+							<path d="M7 1l1.6 3.6L12 6l-3.4 1.4L7 11l-1.6-3.6L2 6l3.4-1.4z" fill="currentColor"></path>
+						</svg>
+					</span>
+					<div class="wb-bsys-modal__ai-text">
+						<span class="wb-bsys-modal__ai-k">Or describe it</span>
+						<span class="wb-bsys-modal__ai-q">"Build a champs block with the draw, live scores, and sponsors."</span>
+					</div>
+					<span class="wb-bsys-modal__ai-go">
+						Generate
+						<span class="wb-bsys-modal__ai-ret" aria-hidden="true">↵</span>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wb-bsys__features">
+		<div class="wb-bsys-mini">
+			<div class="wb-bsys-mini__num">
+				<span class="wb-bsys-mini__num-v">28</span>
+				<span class="wb-bsys-mini__num-k">Predesigned<br />templates</span>
+			</div>
+			<div class="wb-bsys-mini__body">
+				<h3 class="wb-bsys-mini__title">Drop them. Drag them. Done.</h3>
+				<p class="wb-bsys-mini__text">
+					Templates for venue hire, catering packages, corporate events, membership and more. Pick one, drop it on a
+					page, drag it into the order you want.
+				</p>
+			</div>
+		</div>
+
+		<div class="wb-bsys-mini">
+			<div class="wb-bsys-mini__drag">
+				<div class="wb-bsys-mini__drag-grip" aria-hidden="true">
+					<span></span><span></span>
+				</div>
+				<div class="wb-bsys-mini__drag-text">
+					<span class="wb-bsys-mini__drag-k">Typography</span>
+					<span class="wb-bsys-mini__drag-v">Playfair · Inter</span>
+				</div>
+			</div>
+			<div class="wb-bsys-mini__body">
+				<h3 class="wb-bsys-mini__title">Make it look like you.</h3>
+				<p class="wb-bsys-mini__text">
+					Swap the fonts, tune the colours, resize the spacing. Every block picks up your brand instantly — the whole
+					site stays in lockstep.
+				</p>
+			</div>
+		</div>
+
+		<div class="wb-bsys-mini">
+			<span class="wb-bsys-mini__pill">
+				<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+					<path d="M6 1l1.4 3.2L10.5 5l-3.1 1.4L6 10l-1.4-3.6L1.5 5l3.1-.8z" fill="currentColor"></path>
+				</svg>
+				AI block builder
+			</span>
+			<div class="wb-bsys-mini__body">
+				<h3 class="wb-bsys-mini__title">Need something new? Ask.</h3>
+				<p class="wb-bsys-mini__text">
+					Describe the block you want in plain English. Torny AI builds it, wires it to your data — bookings, members,
+					tournaments — and adds it to your library.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>

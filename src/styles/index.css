@@ -10,6 +10,7 @@
 @import url("./blocks/trust-strip.css");
 @import url("./blocks/capabilities.css");
 @import url("./blocks/builder-spot.css");
+@import url("./blocks/wb-spot.css");
 @import url("./blocks/split-spot.css");
 @import url("./blocks/member-card.css");
 @import url("./blocks/wizard-card.css");
@@ -21,6 +22,7 @@
 @import url("./blocks/footer.css");
 @import url("./blocks/wb-hero.css");
 @import url("./blocks/wb-features.css");
+@import url("./blocks/wb-block-system.css");
 @import url("./blocks/wb-steps.css");
 @import url("./blocks/vh-hero.css");
 @import url("./blocks/vh-features.css");

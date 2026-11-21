@@ -1,25 +1,167 @@
 ---
-import BuilderEditor from "./BuilderEditor.astro";
+const pages = [
+	{ name: "Home", active: true },
+	{ name: "Venue hire" },
+	{ name: "Catering" },
+	{ name: "Corporate" },
+];
 ---
 
-<section class="builder-spot">
-	<header class="section-header">
-		<div class="section-header__lead">
-			<span class="section-header__eyebrow">
-				<span class="section-header__eyebrow-dot" aria-hidden="true"></span>
-				Website builder · your revenue engine
-			</span>
-			<h2 class="section-header__title">
-				A website that <span class="builder-spot__accent">leases</span><br />
-				your venue and <span class="builder-spot__accent">books</span><br />
-				your bistro.
-			</h2>
-		</div>
-		<p class="section-header__body">
-			Drag the venue-hire block onto the ballroom page, drop a bistro-bookings block on the restaurant page, publish.
-			Every visitor is now a potential paying customer — not a phone call for a volunteer to return on Monday.
+<section class="wb-spot">
+	<div class="wb-spot__lead">
+		<span class="wb-spot__eyebrow">
+			<span class="wb-spot__eyebrow-dot" aria-hidden="true"></span>
+			Website builder
+		</span>
+		<h2 class="wb-spot__title">
+			A website that <span class="wb-spot__title-accent">pays rent.</span>
+		</h2>
+		<p class="wb-spot__body">
+			Drag the venue-hire wizard onto the ballroom page. Drop a catering-packages block on the enquiries page. Publish
+			in a weekend. Every visitor becomes a paying customer — not a phone call for a volunteer to return on Monday.
 		</p>
-	</header>
+		<div class="wb-spot__actions">
+			<a href="/website-builder" class="btn btn--primary">See the builder →</a>
+			<a href="/demo" class="btn btn--ghost-light">Book a demo</a>
+		</div>
+	</div>
 
-	<BuilderEditor />
+	<aside class="wb-spot__preview" aria-label="Website builder preview">
+		<span class="wb-spot__chip">
+			<span class="wb-spot__chip-dot" aria-hidden="true"></span>
+			Builder · live editor
+		</span>
+
+		<div class="wb-spot__builder">
+			<div class="wb-spot__chrome">
+				<div class="wb-spot__chrome-left">
+					<div class="wb-spot__dots" aria-hidden="true">
+						<span></span><span></span><span></span>
+					</div>
+					<div class="wb-spot__url">
+						<span>thorndonclub.co.nz / venue-hire</span>
+					</div>
+				</div>
+				<span class="wb-spot__publish">Publish</span>
+			</div>
+
+			<div class="wb-spot__body-row">
+				<aside class="wb-spot__pages">
+					<span class="wb-spot__pages-label">Pages</span>
+					<ul class="wb-spot__pages-list">
+						{
+							pages.map((p) => (
+								<li class={`wb-spot__pages-item ${p.active ? "wb-spot__pages-item--on" : ""}`}>{p.name}</li>
+							))
+						}
+					</ul>
+					<span class="wb-spot__pages-new">
+						<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
+							<path d="M5 2v6M2 5h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"></path>
+						</svg>
+						New page
+					</span>
+				</aside>
+
+				<div class="wb-spot__canvas">
+					<article class="wb-spot__blk">
+						<span class="wb-spot__blk-label">Hero · dark</span>
+						<p class="wb-spot__blk-copy">Host the one they'll remember.</p>
+					</article>
+					<div class="wb-spot__slot">+ Add block</div>
+					<article class="wb-spot__blk wb-spot__blk--on">
+						<div class="wb-spot__blk-head">
+							<span class="wb-spot__blk-label wb-spot__blk-label--on">Venue hire wizard</span>
+							<span class="wb-spot__blk-state">Editing</span>
+						</div>
+						<p class="wb-spot__blk-copy">Check your date — 3 steps, done in minutes.</p>
+					</article>
+					<div class="wb-spot__slot">+ Add block</div>
+					<article class="wb-spot__blk">
+						<span class="wb-spot__blk-label">Catering packages</span>
+						<p class="wb-spot__blk-copy">Pick your package — per-guest priced.</p>
+					</article>
+					<div class="wb-spot__slot wb-spot__slot--on">+ Add block</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="wb-spot__pick">
+			<div class="wb-spot__pick-head">
+				<span class="wb-spot__pick-eyebrow">
+					<span class="wb-spot__pick-dot" aria-hidden="true"></span>
+					Pick a block
+				</span>
+				<span class="wb-spot__pick-count">28 available</span>
+			</div>
+
+			<div class="wb-spot__pick-grid">
+				<article class="wb-spot__thumb">
+					<div class="wb-spot__thumb-prev wb-spot__thumb-prev--hero">
+						<div class="wb-spot__thumb-txt">
+							<span class="wb-spot__thumb-ln wb-spot__thumb-ln--t"></span>
+							<span class="wb-spot__thumb-ln"></span>
+							<span class="wb-spot__thumb-ln wb-spot__thumb-ln--s"></span>
+						</div>
+						<div class="wb-spot__thumb-img"></div>
+					</div>
+					<div class="wb-spot__thumb-meta">
+						<span class="wb-spot__thumb-name">Hero</span>
+						<span class="wb-spot__thumb-desc">Heading + CTAs</span>
+					</div>
+				</article>
+
+				<article class="wb-spot__thumb">
+					<div class="wb-spot__thumb-prev wb-spot__thumb-prev--tourney">
+						<span class="wb-spot__thumb-live">Live</span>
+						<span class="wb-spot__thumb-ln wb-spot__thumb-ln--white"></span>
+						<span class="wb-spot__thumb-ln wb-spot__thumb-ln--s wb-spot__thumb-ln--white"></span>
+					</div>
+					<div class="wb-spot__thumb-meta">
+						<span class="wb-spot__thumb-name">Tournament</span>
+						<span class="wb-spot__thumb-desc">Live feature block</span>
+					</div>
+				</article>
+
+				<article class="wb-spot__thumb wb-spot__thumb--on">
+					<div class="wb-spot__thumb-prev wb-spot__thumb-prev--venue">
+						<div class="wb-spot__thumb-steps">
+							<span class="wb-spot__thumb-step wb-spot__thumb-step--on">1</span>
+							<span class="wb-spot__thumb-rule wb-spot__thumb-rule--on"></span>
+							<span class="wb-spot__thumb-step">2</span>
+							<span class="wb-spot__thumb-rule"></span>
+							<span class="wb-spot__thumb-step">3</span>
+						</div>
+						<div class="wb-spot__thumb-opts">
+							<span></span><span></span><span class="wb-spot__thumb-opt--on"></span>
+						</div>
+					</div>
+					<div class="wb-spot__thumb-foot">
+						<div class="wb-spot__thumb-meta">
+							<span class="wb-spot__thumb-name">Venue hire</span>
+							<span class="wb-spot__thumb-desc">3-step wizard</span>
+						</div>
+						<span class="wb-spot__thumb-add" aria-hidden="true">
+							<svg width="10" height="10" viewBox="0 0 10 10">
+								<path d="M5 2v6M2 5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+							</svg>
+						</span>
+					</div>
+				</article>
+			</div>
+
+			<div class="wb-spot__ai">
+				<span class="wb-spot__ai-icon" aria-hidden="true">
+					<svg width="12" height="12" viewBox="0 0 12 12">
+						<path d="M6 1l1.4 3.2L10.5 5l-3.1 1.4L6 10l-1.4-3.6L1.5 5l3.1-.8z" fill="currentColor"></path>
+					</svg>
+				</span>
+				<div class="wb-spot__ai-text">
+					<span class="wb-spot__ai-k">Or describe it</span>
+					<span class="wb-spot__ai-q">"Build a sponsor row for the Hutt Open with logos."</span>
+				</div>
+				<span class="wb-spot__ai-go">Generate</span>
+			</div>
+		</div>
+	</aside>
 </section>

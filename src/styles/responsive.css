@@ -63,10 +63,6 @@
 		margin-top: 4px;
 	}
 
-	.hero__play-chip {
-		display: none;
-	}
-
 	.hero__card {
 		position: static;
 		width: auto;

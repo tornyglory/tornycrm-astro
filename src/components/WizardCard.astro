@@ -1,69 +1,172 @@
 ---
+const occasions = [
+	{ label: "Birthday", active: true },
+	{ label: "Wedding" },
+	{ label: "Corporate" },
+	{ label: "Community" },
+	{ label: "Wake" },
+];
+
+const lineItems = [
+	{ label: "The clubhouse · evening", value: "$720" },
+	{ label: "Grazing platters × 6", value: "$510" },
+	{ label: "Bar tab · prepaid", value: "$400" },
+	{ label: "Refundable bond", value: "$300", muted: true },
+];
 ---
 
-<aside class="wizard-card" aria-label="Venue booking wizard preview">
-	<div class="wizard-card__head">
-		<div class="wizard-card__title">Book the Ballroom</div>
-		<div class="wizard-card__step">Step 2 of 3</div>
+<aside class="wizard-card" aria-label="Venue hire wizard preview">
+	<span class="wizard-card__chip">
+		<span class="wizard-card__chip-dot" aria-hidden="true"></span>
+		Venue hire wizard
+	</span>
+
+	<div class="wizard-card__form">
+		<div class="wizard-card__form-head">
+			<div class="wizard-card__form-head-text">
+				<span class="wizard-card__step">Step 2 of 3</span>
+				<span class="wizard-card__headline">Tell us about your event.</span>
+			</div>
+			<div class="wizard-card__progress" aria-hidden="true">
+				<span class="wizard-card__progress-step wizard-card__progress-step--done"></span>
+				<span class="wizard-card__progress-step wizard-card__progress-step--done"></span>
+				<span class="wizard-card__progress-step"></span>
+			</div>
+		</div>
+
+		<div class="wizard-card__section">
+			<div class="wizard-card__section-head">
+				<span class="wizard-card__section-n">01</span>
+				<span class="wizard-card__section-title">The event</span>
+			</div>
+
+			<div class="wizard-card__field">
+				<span class="wizard-card__label">What's the occasion?</span>
+				<div class="wizard-card__chips">
+					{
+						occasions.map((o) => (
+							<span class={`wizard-card__pill ${o.active ? "wizard-card__pill--on" : ""}`}>{o.label}</span>
+						))
+					}
+				</div>
+			</div>
+
+			<div class="wizard-card__row">
+				<div class="wizard-card__field">
+					<span class="wizard-card__label">Guests</span>
+					<div class="wizard-card__stepper">
+						<span class="wizard-card__stepper-btn" aria-hidden="true">−</span>
+						<span class="wizard-card__stepper-val">80</span>
+						<span class="wizard-card__stepper-btn" aria-hidden="true">+</span>
+					</div>
+				</div>
+				<div class="wizard-card__field wizard-card__field--grow">
+					<span class="wizard-card__label">Setup style</span>
+					<div class="wizard-card__select">
+						<span>Long tables + bar</span>
+						<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+							<path
+								d="M3 4.5l3 3 3-3"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"></path>
+						</svg>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="wizard-card__section wizard-card__section--div">
+			<div class="wizard-card__section-head">
+				<span class="wizard-card__section-n">02</span>
+				<span class="wizard-card__section-title">Add-ons</span>
+			</div>
+
+			<div class="wizard-card__addon wizard-card__addon--on">
+				<span class="wizard-card__check wizard-card__check--on" aria-hidden="true">
+					<svg width="10" height="10" viewBox="0 0 10 10">
+						<path d="M2 5l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+					</svg>
+				</span>
+				<div class="wizard-card__addon-body">
+					<span class="wizard-card__addon-title">Grazing platters</span>
+					<span class="wizard-card__addon-sub">Locally sourced · serves 8</span>
+				</div>
+				<div class="wizard-card__addon-right">
+					<span class="wizard-card__addon-price">$85</span>
+					<span class="wizard-card__addon-per">/ platter</span>
+					<div class="wizard-card__count">
+						<span aria-hidden="true">−</span>
+						<span class="wizard-card__count-val">6</span>
+						<span aria-hidden="true">+</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="wizard-card__addon wizard-card__addon--on">
+				<span class="wizard-card__check wizard-card__check--on" aria-hidden="true">
+					<svg width="10" height="10" viewBox="0 0 10 10">
+						<path d="M2 5l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+					</svg>
+				</span>
+				<div class="wizard-card__addon-body">
+					<span class="wizard-card__addon-title">Bar tab · prepaid</span>
+					<span class="wizard-card__addon-sub">Unused refunded after event</span>
+				</div>
+				<span class="wizard-card__addon-price">$400</span>
+			</div>
+
+			<div class="wizard-card__addon">
+				<span class="wizard-card__check" aria-hidden="true"></span>
+				<div class="wizard-card__addon-body">
+					<span class="wizard-card__addon-title">Bowls on the green</span>
+					<span class="wizard-card__addon-sub">90 min · coach + equipment</span>
+				</div>
+				<span class="wizard-card__addon-price">$180</span>
+			</div>
+		</div>
 	</div>
 
-	<div class="wizard-card__progress" aria-hidden="true">
-		<span class="wizard-card__progress-step wizard-card__progress-step--done"></span>
-		<span class="wizard-card__progress-step wizard-card__progress-step--done"></span>
-		<span class="wizard-card__progress-step"></span>
-	</div>
-
-	<div class="wizard-card__picker">
-		<div class="wizard-card__picker-label">Choose a package</div>
-
-		<div class="wizard-card__option wizard-card__option--selected">
-			<span class="wizard-card__option-radio wizard-card__option-radio--active" aria-hidden="true">
-				<svg width="20" height="20" viewBox="0 0 20 20">
-					<path
-						d="M4 10l4 4 8-8"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2.2"
-						stroke-linecap="round"
-						stroke-linejoin="round"></path>
+	<div class="wizard-card__summary">
+		<div class="wizard-card__summary-head">
+			<span class="wizard-card__summary-dot" aria-hidden="true"></span>
+			Booking summary
+		</div>
+		<div class="wizard-card__summary-event">
+			<span class="wizard-card__summary-title">The clubhouse</span>
+			<span class="wizard-card__summary-meta">Sat 7 Mar · 6pm – midnight · 80 pax</span>
+		</div>
+		<div class="wizard-card__summary-lines">
+			{
+				lineItems.map((li) => (
+					<div class={`wizard-card__summary-line ${li.muted ? "wizard-card__summary-line--muted" : ""}`}>
+						<span>{li.label}</span>
+						<span>{li.value}</span>
+					</div>
+				))
+			}
+		</div>
+		<div class="wizard-card__summary-due">
+			<div class="wizard-card__summary-due-left">
+				<span class="wizard-card__summary-due-k">Due today · deposit</span>
+				<span class="wizard-card__summary-due-sub">Balance due 3 Dec</span>
+			</div>
+			<div class="wizard-card__summary-due-right">
+				<span class="wizard-card__summary-due-v">$483</span>
+				<span class="wizard-card__summary-due-total">$1,447 total</span>
+			</div>
+		</div>
+		<div class="wizard-card__summary-foot">
+			<span class="wizard-card__summary-cancel">
+				<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+					<circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.2"></circle>
+					<path d="M6 3.5v3.2l2 1.4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path>
 				</svg>
+				Free cancellation until 14 days before.
 			</span>
-			<div class="wizard-card__option-body">
-				<div class="wizard-card__option-title">Canapés + bar · "Twilight"</div>
-				<div class="wizard-card__option-sub">8 bites, 3 hr open bar, cheese board grazing station</div>
-			</div>
-			<div class="wizard-card__option-price">$68 /pp</div>
-		</div>
-
-		<div class="wizard-card__option">
-			<span class="wizard-card__option-radio" aria-hidden="true"></span>
-			<div class="wizard-card__option-body">
-				<div class="wizard-card__option-title">Plated three course</div>
-				<div class="wizard-card__option-sub">Choice of two mains, dessert, wine on tables</div>
-			</div>
-			<div class="wizard-card__option-price">$95 /pp</div>
-		</div>
-
-		<div class="wizard-card__option">
-			<span class="wizard-card__option-radio" aria-hidden="true"></span>
-			<div class="wizard-card__option-body">
-				<div class="wizard-card__option-title">BYO + venue only</div>
-				<div class="wizard-card__option-sub">Space hire, bar staff provided, you cater</div>
-			</div>
-			<div class="wizard-card__option-price">$1,200</div>
-		</div>
-	</div>
-
-	<div class="wizard-card__footer">
-		<div class="wizard-card__total">
-			<span class="wizard-card__total-meta">80 guests · deposit 20%</span>
-			<span class="wizard-card__total-value">
-				$5,440.00 <span class="wizard-card__total-value-sub">· deposit $1,088</span>
-			</span>
-		</div>
-		<div class="wizard-card__actions">
-			<a href="#" class="btn btn--sm btn--outline-dark">Back</a>
-			<a href="#" class="btn btn--sm btn--dark">Continue →</a>
+			<a href="#" class="wizard-card__summary-cta">Pay deposit <span aria-hidden="true">→</span></a>
 		</div>
 	</div>
 </aside>
