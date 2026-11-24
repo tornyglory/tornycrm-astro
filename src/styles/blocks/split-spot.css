@@ -2,10 +2,17 @@
 	width: 100%;
 	padding: 140px 72px;
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	gap: 96px;
 	background: var(--color-surface);
+}
+
+.split-spot__inner {
+	width: 100%;
+	max-width: 1296px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 96px;
 }
 
 .split-spot--sand {
@@ -33,7 +40,7 @@
 
 .split-spot__lead {
 	flex: 1 1 0;
-	max-width: 520px;
+	max-width: 560px;
 	display: flex;
 	flex-direction: column;
 	gap: 28px;

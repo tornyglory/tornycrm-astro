@@ -196,8 +196,11 @@
 
 	/* ---------- SPLIT SPOT (Membership + Venue) ---------- */
 	.split-spot {
-		flex-direction: column;
 		padding: 64px 20px;
+	}
+
+	.split-spot__inner {
+		flex-direction: column;
 		gap: 40px;
 	}
 
